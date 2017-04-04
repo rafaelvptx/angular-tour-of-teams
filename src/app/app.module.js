@@ -16,6 +16,7 @@ var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_component_1 = require("./app.component");
 var leagues_component_1 = require("./leagues.component");
+var seasons_component_1 = require("./seasons.component");
 var days_component_1 = require("./days.component");
 var matchs_component_1 = require("./matchs.component");
 var league_service_1 = require("./league.service");
@@ -39,6 +40,7 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             leagues_component_1.LeaguesComponent,
+            seasons_component_1.SeasonsComponent,
             days_component_1.DaysComponent,
             matchs_component_1.MatchsComponent
         ],

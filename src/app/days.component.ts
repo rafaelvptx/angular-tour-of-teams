@@ -1,5 +1,6 @@
-import {Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit }         from '@angular/core';
+import { Router }                   from '@angular/router';
+import { Location }                 from '@angular/common';
 
 import { Day } from './day';
 import { DayService } from './day.service';
@@ -16,6 +17,7 @@ export class DaysComponent implements OnInit{
     selectedDay: Day;
 
     constructor(
+        private location: Location,
         private router: Router,
         private  dayService: DayService) {}
 
@@ -31,8 +33,8 @@ export class DaysComponent implements OnInit{
         this.selectedDay = day;
     }
 
-    gotoDetail(): void {
-        this.router.navigate(['/matchs', this.selectedDay.name]);
+    goBack(): void {
+        this.location.back();
     }
 
 }

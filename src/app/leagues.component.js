@@ -10,10 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
 var LeaguesComponent = (function () {
-    function LeaguesComponent(leagueService, seasonService) {
+    function LeaguesComponent(router, leagueService, seasonService) {
+        this.router = router;
         this.leagueService = leagueService;
         this.seasonService = seasonService;
         this.leagues = [];
@@ -28,6 +30,7 @@ var LeaguesComponent = (function () {
     };
     LeaguesComponent.prototype.onSelect = function (league) {
         this.selectedLeague = league;
+        this.router.navigate(['/leagues', this.selectedLeague.name]);
     };
     return LeaguesComponent;
 }());
@@ -37,7 +40,8 @@ LeaguesComponent = __decorate([
         templateUrl: './leagues.component.html',
         styleUrls: ['./leagues.component.css']
     }),
-    __metadata("design:paramtypes", [league_service_1.LeagueService,
+    __metadata("design:paramtypes", [router_1.Router,
+        league_service_1.LeagueService,
         season_service_1.SeasonService])
 ], LeaguesComponent);
 exports.LeaguesComponent = LeaguesComponent;

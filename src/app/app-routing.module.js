@@ -11,10 +11,12 @@ var router_1 = require("@angular/router");
 var leagues_component_1 = require("./leagues.component");
 var matchs_component_1 = require("./matchs.component");
 var days_component_1 = require("./days.component");
+var seasons_component_1 = require("./seasons.component");
 var routes = [
-    { path: '', redirectTo: '/leagues', pathMatch: 'full' },
+    { path: '', redirectTo: 'leagues', pathMatch: 'full' },
     { path: 'leagues', component: leagues_component_1.LeaguesComponent },
-    { path: 'days/:name', component: days_component_1.DaysComponent },
+    { path: 'leagues/:name', component: seasons_component_1.SeasonsComponent },
+    { path: 'seasons/:name', component: days_component_1.DaysComponent },
     { path: 'matchs/:name', component: matchs_component_1.MatchsComponent },
 ];
 var AppRoutingModule = (function () {

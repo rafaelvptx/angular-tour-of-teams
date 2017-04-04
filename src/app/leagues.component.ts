@@ -20,6 +20,7 @@ export class LeaguesComponent implements OnInit {
     selectedLeague: League;
 
     constructor(
+        private router: Router,
         private leagueService: LeagueService,
         private seasonService: SeasonService) { }
 
@@ -32,6 +33,7 @@ export class LeaguesComponent implements OnInit {
 
     onSelect(league: League): void {
         this.selectedLeague = league;
+        this.router.navigate(['/leagues', this.selectedLeague.name]);
     }
 
 }

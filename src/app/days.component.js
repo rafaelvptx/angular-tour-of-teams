@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
 var day_service_1 = require("./day.service");
 var DaysComponent = (function () {
-    function DaysComponent(router, dayService) {
+    function DaysComponent(location, router, dayService) {
+        this.location = location;
         this.router = router;
         this.dayService = dayService;
         this.title = 'Tour of Days';
@@ -28,8 +30,8 @@ var DaysComponent = (function () {
     DaysComponent.prototype.onSelect = function (day) {
         this.selectedDay = day;
     };
-    DaysComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/matchs', this.selectedDay.name]);
+    DaysComponent.prototype.goBack = function () {
+        this.location.back();
     };
     return DaysComponent;
 }());
@@ -39,7 +41,8 @@ DaysComponent = __decorate([
         templateUrl: './days.component.html',
         styleUrls: ['./days.component.css']
     }),
-    __metadata("design:paramtypes", [router_1.Router,
+    __metadata("design:paramtypes", [common_1.Location,
+        router_1.Router,
         day_service_1.DayService])
 ], DaysComponent);
 exports.DaysComponent = DaysComponent;

@@ -12,6 +12,7 @@ import { InMemoryDataService }          from './in-memory-data.service';
 import { AppComponent }                 from './app.component';
 
 import { LeaguesComponent }             from './leagues.component';
+import { SeasonsComponent }             from './seasons.component';
 import { DaysComponent }                from './days.component';
 import { MatchsComponent }              from './matchs.component';
 
@@ -31,6 +32,7 @@ import { MatchService }                 from "./match.service";
   declarations: [
     AppComponent,
     LeaguesComponent,
+    SeasonsComponent,
     DaysComponent,
     MatchsComponent
   ],
