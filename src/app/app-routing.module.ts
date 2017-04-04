@@ -8,7 +8,6 @@ import { DaysComponent}                     from "./days.component";
 const routes: Routes = [
     { path: '', redirectTo: '/leagues', pathMatch: 'full' },
     { path: 'leagues',  component: LeaguesComponent },
-    { path: 'leagues/:name',  component: LeaguesComponent },
     { path: 'days/:name', component: DaysComponent },
     { path: 'matchs/:name', component: MatchsComponent },
 ];

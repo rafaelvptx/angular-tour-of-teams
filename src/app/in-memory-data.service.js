@@ -45,7 +45,7 @@ var InMemoryDataService = (function () {
             { id: 6, name: 'J6' }
         ];
         var matchs = [
-            { id: 1, teamDomicile: 'PSG', teamExterieure: 'Monaco', resultat: '4-1', pourcentage: 75 }
+            { id: 1, teamDom: 'PSG', pDom: 5, teamExt: 'Monaco', pExt: 95, res: '4-3' }
         ];
         return { teams: teams, leagues: leagues, seasons: seasons, days: days, matchs: matchs };
     };

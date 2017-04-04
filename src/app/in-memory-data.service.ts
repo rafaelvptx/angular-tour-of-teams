@@ -47,7 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
         ];
 
         let matchs = [
-            { id: 1, teamDomicile: 'PSG', teamExterieure: 'Monaco', resultat: '4-1', pourcentage: 75 }
+            { id: 1, teamDom: 'PSG', pDom: 5, teamExt: 'Monaco', pExt: 95, res: '4-3'  }
         ];
 
         return { teams, leagues, seasons, days, matchs };

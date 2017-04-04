@@ -14,7 +14,6 @@ var days_component_1 = require("./days.component");
 var routes = [
     { path: '', redirectTo: '/leagues', pathMatch: 'full' },
     { path: 'leagues', component: leagues_component_1.LeaguesComponent },
-    { path: 'leagues/:name', component: leagues_component_1.LeaguesComponent },
     { path: 'days/:name', component: days_component_1.DaysComponent },
     { path: 'matchs/:name', component: matchs_component_1.MatchsComponent },
 ];
