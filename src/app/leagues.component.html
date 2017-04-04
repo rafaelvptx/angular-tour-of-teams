@@ -1,0 +1,23 @@
+<h3>Select your league</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let league of leagues"
+       [class.selected]="league === selectedLeague"
+       (click)="onSelect(league)"
+       class="col-0-4">
+        <div class="module league">
+            <h4>{{league.name}}</h4>
+        </div>○
+    </a>
+</div>
+<div *ngIf="selectedLeague" >
+    <h2>
+        {{selectedLeague.name | uppercase}} is my league
+    </h2>
+    <div class="grid grid-pad">
+        <a *ngFor="let season of seasons" [routerLink]="['/days', season.name]" class="col-0-4">
+            <div class="module season">
+                <h4>{{season.name}}</h4>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<h2>Matchs:</h2>
+<ul class="matchs">
+    <li *ngFor="let match of matchs"
+        [class.selected]="match === selectedMatch"
+        (click)="onSelect(match)">
+        <span class="badge">{{match.teamDomicile}} {{match.teamExterieure}} {{match.resultat}} {{match.pourcentage}}%</span>
+    </li>
+</ul>
