@@ -14,7 +14,8 @@ var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var day_service_1 = require("./day.service");
 var DaysComponent = (function () {
-    function DaysComponent(location, router, dayService) {
+    function DaysComponent(route, location, router, dayService) {
+        this.route = route;
         this.location = location;
         this.router = router;
         this.dayService = dayService;
@@ -25,10 +26,18 @@ var DaysComponent = (function () {
         this.dayService.getDays().then(function (days) { return _this.days = days; });
     };
     DaysComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (p) { return _this.nameLeague = p['nameLeague']; });
+        this.route.params.subscribe(function (p) { return _this.selectedSeason = p['selectedSeason']; });
         this.getDays();
     };
     DaysComponent.prototype.onSelect = function (day) {
         this.selectedDay = day;
+        this.router.navigate(['/home/leagues/seasons/matchs', {
+                nameLeague: this.nameLeague,
+                selectedSeason: this.selectedSeason,
+                selectedDay: this.selectedDay.name
+            }]);
     };
     DaysComponent.prototype.goBack = function () {
         this.location.back();
@@ -41,7 +50,8 @@ DaysComponent = __decorate([
         templateUrl: './days.component.html',
         styleUrls: ['./days.component.css']
     }),
-    __metadata("design:paramtypes", [common_1.Location,
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        common_1.Location,
         router_1.Router,
         day_service_1.DayService])
 ], DaysComponent);

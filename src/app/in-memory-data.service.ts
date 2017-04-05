@@ -26,8 +26,8 @@ export class InMemoryDataService implements InMemoryDbService {
         ];
 
         let leagues = [
-            {id: 1, name: 'Ligue 1'},
-            {id: 2, name: 'Ligue 2'},
+            {id: 1, name: 'Ligue1'},
+            {id: 2, name: 'Ligue2'},
             {id: 3, name: 'LIGA'}
         ];
 

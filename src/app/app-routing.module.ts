@@ -7,11 +7,11 @@ import { DaysComponent}                     from './days.component';
 import { SeasonsComponent}                  from './seasons.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'leagues', pathMatch: 'full' },
-    { path: 'leagues',  component: LeaguesComponent },
-    { path: 'leagues/:name',  component: SeasonsComponent },
-    { path: 'seasons/:name', component: DaysComponent },
-    { path: 'matchs/:name', component: MatchsComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home',  component: LeaguesComponent },
+    { path: 'home/leagues',  component: SeasonsComponent },
+    { path: 'home/leagues/seasons', component: DaysComponent },
+    { path: 'home/leagues/seasons/matchs', component: MatchsComponent },
 ];
 @NgModule({
     imports: [ RouterModule.forRoot(routes) ],

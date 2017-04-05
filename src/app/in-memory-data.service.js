@@ -27,8 +27,8 @@ var InMemoryDataService = (function () {
             { id: 30, name: 'Toulouse' }
         ];
         var leagues = [
-            { id: 1, name: 'Ligue 1' },
-            { id: 2, name: 'Ligue 2' },
+            { id: 1, name: 'Ligue1' },
+            { id: 2, name: 'Ligue2' },
             { id: 3, name: 'LIGA' }
         ];
         var seasons = [

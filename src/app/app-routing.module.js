@@ -13,11 +13,11 @@ var matchs_component_1 = require("./matchs.component");
 var days_component_1 = require("./days.component");
 var seasons_component_1 = require("./seasons.component");
 var routes = [
-    { path: '', redirectTo: 'leagues', pathMatch: 'full' },
-    { path: 'leagues', component: leagues_component_1.LeaguesComponent },
-    { path: 'leagues/:name', component: seasons_component_1.SeasonsComponent },
-    { path: 'seasons/:name', component: days_component_1.DaysComponent },
-    { path: 'matchs/:name', component: matchs_component_1.MatchsComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: leagues_component_1.LeaguesComponent },
+    { path: 'home/leagues', component: seasons_component_1.SeasonsComponent },
+    { path: 'home/leagues/seasons', component: days_component_1.DaysComponent },
+    { path: 'home/leagues/seasons/matchs', component: matchs_component_1.MatchsComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

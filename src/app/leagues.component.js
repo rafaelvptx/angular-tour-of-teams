@@ -30,7 +30,7 @@ var LeaguesComponent = (function () {
     };
     LeaguesComponent.prototype.onSelect = function (league) {
         this.selectedLeague = league;
-        this.router.navigate(['/leagues', this.selectedLeague.name]);
+        this.router.navigate(['/home/leagues', { name: this.selectedLeague.name }]);
     };
     return LeaguesComponent;
 }());
