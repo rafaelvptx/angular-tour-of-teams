@@ -1,61 +1,84 @@
-.selected {
-    background-color: #CFD8DC !important;
-    color: white;
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
 }
-.days {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
+[class*='col-']:last-of-type {
+  padding-right: 0;
+  border-radius: 10px;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #1e1e1e;
+  background-color: #d2d2d2;
+  font-family: 'Raleway',sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: .05em;
+  text-align: center;
+  border-radius: 10px;
+  border: 3px #404040 dashed;
 }
 
-.days li {
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
+h4 {
+  position: relative;
+  border-radius: 10px;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.module {
+  padding: 20px;
+  text-align: center;
+  color: #eee;
+  max-height: 120px;
+  min-width: 120px;
+  background-color: #607D8B;
+  border-radius: 2px;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+.grid-pad {
+
+  padding: 10px 0;
+
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
 }
 
-.days li:hover {
-    color: #607D8B;
-    background-color: #DDD;
-    left: .1em;
+
+
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
 }
-.days li.selected:hover {
-    background-color: #BBD8DC !important;
-    color: white;
-}
-.days .text {
-    position: relative;
-    top: -3px;
-}
-.days .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607D8B;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-}
-button {
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-}
-button:hover {
-    background-color: #cfd8dc;
-}
+
