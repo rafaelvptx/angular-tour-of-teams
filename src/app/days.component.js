@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
@@ -28,6 +29,7 @@ var DaysComponent = (function () {
         var _this = this;
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['nameLeague']; });
         this.route.params.subscribe(function (p) { return _this.selectedSeason = p['selectedSeason']; });
+        this.dayService.setDaysUrl(this.nameLeague, this.selectedSeason);
         this.getDays();
     };
     DaysComponent.prototype.onSelect = function (day) {

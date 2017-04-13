@@ -8,30 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/map");
 var LeagueService = (function () {
     function LeagueService(http) {
         this.http = http;
-        this.leaguesUrl = 'api/leagues'; // URL to web api
+        this.leaguesUrl = 'http://localhost:8080/leagues'; // URL to web api
     }
+    /*getLeagues(): Promise<League[]> {
+        return this.http.get(this.leaguesUrl)
+            .toPromise()
+            .then(response => response.json().data as League[])
+            .catch(this.handleError);
+     JSON.parse("{\"ligues\": " + response.text() + "}")
+    }*/
     LeagueService.prototype.getLeagues = function () {
         return this.http.get(this.leaguesUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    /* private extractData(res: Response) {
+         let body = res;
+         return body.data || { };
+     }
+ */
     LeagueService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
-    };
-    LeagueService.prototype.getLeague = function (id) {
-        var url = this.leaguesUrl + "/" + id;
-        return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
     };
     return LeagueService;
 }());

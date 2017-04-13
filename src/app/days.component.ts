@@ -30,8 +30,11 @@ export class DaysComponent implements OnInit{
     }
 
     ngOnInit(): void {
+
         this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
         this.route.params.subscribe(p => this.selectedSeason = p['selectedSeason']);
+
+        this.dayService.setDaysUrl(this.nameLeague,this.selectedSeason);
 
         this.getDays();
     }

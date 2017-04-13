@@ -12,10 +12,14 @@ export class SeasonService {
 
     constructor(private http: Http) { }
 
+    setSeasonUrl(name: String) {
+        this.seasonsUrl = 'http://localhost:8080/'+name+'/saisons';
+    }
+
     getSeasons(): Promise<Season[]> {
         return this.http.get(this.seasonsUrl)
             .toPromise()
-            .then(response => response.json().data as Season[])
+            .then(response => response.json() as Season[])
             .catch(this.handleError);
     }
 

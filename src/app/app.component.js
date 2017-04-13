@@ -5,9 +5,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = 'Coop';
     }
     return AppComponent;
 }());
@@ -15,7 +17,7 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         styleUrls: ['./app.component.css'],
-        template: "\n   <ul>\n        <li><a class=\"active\" href=\"\">Home</a></li>\n        <li><a href=\"\">Journ&eacute;es</a></li>\n        <li><a href=\"\">Equipes</a></li>\n         <li><a  href=\"\">Retour</a></li>\n   \n     \n    </ul>\n    <div id=\"page\"><router-outlet></router-outlet></div>"
+        template: "\n        <h1>{{title}}</h1>\n        <nav>\n            <a routerLink=\"/leagues\" routerLinkActive=\"active\">Leagues</a>\n        </nav>\n        <router-outlet></router-outlet>\n    "
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -12,10 +12,14 @@ export class DayService {
 
     constructor(private http: Http) { }
 
+    setDaysUrl(nameLeague: String, nameSeason: String) {
+        this.daysUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/journees';
+    }
+
     getDays(): Promise<Day[]> {
         return this.http.get(this.daysUrl)
             .toPromise()
-            .then(response => response.json().data as Day[])
+            .then(response => response.json() as Day[])
             .catch(this.handleError);
     }
 

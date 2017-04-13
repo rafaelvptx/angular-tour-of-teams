@@ -14,16 +14,26 @@ import {Match}                      from "./match";
 })
 export class MatchsComponent implements OnInit{
 
+    nameLeague: String;
+    nameSeason: String;
+    selectedDay: String;
+
     matchs: Match[];
     selectedMatch: Match;
 
     constructor(
         private matchService: MatchService,
-        private router: ActivatedRoute,
+        private route: ActivatedRoute,
         private location: Location
     ) {}
 
     ngOnInit(): void {
+        this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
+        this.route.params.subscribe(p => this.nameSeason = p['selectedSeason']);
+        this.route.params.subscribe(p => this.selectedDay = p['selectedDay']);
+
+        this.matchService.setMatchsUrl(this.nameLeague,this.nameSeason,this.selectedDay);
+
         this.getMatchs();
     }
 

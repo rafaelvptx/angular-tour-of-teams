@@ -1,7 +1,6 @@
-import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-export class InMemoryDataService implements InMemoryDbService {
-    createDb() {
+export class InMemoryDataService {
+/*    createDb() {
         let teams = [
             {id: 11, name: 'Angers'},
             {id: 12, name: 'Bastia'},
@@ -25,11 +24,6 @@ export class InMemoryDataService implements InMemoryDbService {
             {id: 30, name: 'Toulouse'}
         ];
 
-        let leagues = [
-            {id: 1, name: 'Ligue1'},
-            {id: 2, name: 'Ligue2'},
-            {id: 3, name: 'LIGA'}
-        ];
 
         let seasons = [
             {id: 1, name: 'Année 2016-2017'},
@@ -50,6 +44,6 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 1, teamDom: 'PSG', pDom: 5, teamExt: 'Monaco', pExt: 95, res: '4-3'  }
         ];
 
-        return { teams, leagues, seasons, days, matchs };
-    }
+        return { teams, seasons, days, matchs };
+    }*/
 }

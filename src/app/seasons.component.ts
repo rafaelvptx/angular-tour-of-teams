@@ -28,15 +28,14 @@ export class SeasonsComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private location: Location,
-        private leagueService: LeagueService,
         private seasonService: SeasonService) { }
 
     ngOnInit(): void  {
 
         this.route.params.subscribe(p => this.nameLeague = p['name']);
-
+        this.seasonService.setSeasonUrl(this.nameLeague);
         this.seasonService.getSeasons()
-            .then(seasons => this.seasons = seasons.slice(0, 5));
+            .then(seasons => this.seasons = seasons);
     }
 
     onSelect(season: Season): void {

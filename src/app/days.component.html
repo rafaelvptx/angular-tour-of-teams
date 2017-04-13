@@ -1,9 +1,9 @@
-<h3>Selectionner votre journée</h3>
+<h2>Select your day</h2>
 <ul class="days">
     <li *ngFor="let day of days"
         [class.selected]="day === selectedDay"
         (click)="onSelect(day)">
-        <span class="badge">{{day.id}}</span> {{day.name}}
+        <span class="badge">{{day.name}}</span>
     </li>
 </ul>
 <div *ngIf="selectedDay">

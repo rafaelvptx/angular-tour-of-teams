@@ -1,7 +1,8 @@
 export class Match{
-    id:                 number;
-    teamDomicile:       string;
-    teamExterieure:     string;
-    resultat:           string;
-    pourcentage:        number;
+    nomEquipeHome:      string;
+    equipeAway:         string;
+    scoreHome:          number;
+    scoreAway:          number;
+    chanceWinHome:      number;
+    chanceWinAway:      number;
 }

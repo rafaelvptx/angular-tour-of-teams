@@ -8,24 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var league_service_1 = require("./league.service");
-var season_service_1 = require("./season.service");
 var LeaguesComponent = (function () {
-    function LeaguesComponent(router, leagueService, seasonService) {
+    function LeaguesComponent(router, leagueService) {
         this.router = router;
         this.leagueService = leagueService;
-        this.seasonService = seasonService;
         this.leagues = [];
-        this.seasons = [];
     }
     LeaguesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.leagueService.getLeagues()
-            .then(function (leagues) { return _this.leagues = leagues.slice(0, 5); });
-        this.seasonService.getSeasons()
-            .then(function (seasons) { return _this.seasons = seasons.slice(0, 5); });
+            .then(function (leagues) { return _this.leagues = leagues; });
     };
     LeaguesComponent.prototype.onSelect = function (league) {
         this.selectedLeague = league;
@@ -40,8 +36,7 @@ LeaguesComponent = __decorate([
         styleUrls: ['./leagues.component.css']
     }),
     __metadata("design:paramtypes", [router_1.Router,
-        league_service_1.LeagueService,
-        season_service_1.SeasonService])
+        league_service_1.LeagueService])
 ], LeaguesComponent);
 exports.LeaguesComponent = LeaguesComponent;
 //# sourceMappingURL=leagues.component.js.map

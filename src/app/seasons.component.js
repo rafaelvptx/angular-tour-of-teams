@@ -8,19 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 ///<reference path="../../node_modules/@angular/router/src/router.d.ts"/>
 require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var season_service_1 = require("./season.service");
-var league_service_1 = require("./league.service");
 var SeasonsComponent = (function () {
-    function SeasonsComponent(route, router, location, leagueService, seasonService) {
+    function SeasonsComponent(route, router, location, seasonService) {
         this.route = route;
         this.router = router;
         this.location = location;
-        this.leagueService = leagueService;
         this.seasonService = seasonService;
         this.nameLeague = '';
         this.url = '';
@@ -29,8 +28,9 @@ var SeasonsComponent = (function () {
     SeasonsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['name']; });
+        this.seasonService.setSeasonUrl(this.nameLeague);
         this.seasonService.getSeasons()
-            .then(function (seasons) { return _this.seasons = seasons.slice(0, 5); });
+            .then(function (seasons) { return _this.seasons = seasons; });
     };
     SeasonsComponent.prototype.onSelect = function (season) {
         this.selectedSeason = season;
@@ -50,7 +50,6 @@ SeasonsComponent = __decorate([
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
         router_1.Router,
         common_1.Location,
-        league_service_1.LeagueService,
         season_service_1.SeasonService])
 ], SeasonsComponent);
 exports.SeasonsComponent = SeasonsComponent;

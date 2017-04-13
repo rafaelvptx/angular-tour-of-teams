@@ -12,10 +12,14 @@ export class MatchService {
 
     constructor(private http: Http) { }
 
+    setMatchsUrl(nameLeague: String, nameSeason: String, nameDay: String) {
+        this.matchsUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/'+ nameDay +'/matchs';
+    }
+
     getMatchs(): Promise<Match[]> {
         return this.http.get(this.matchsUrl)
             .toPromise()
-            .then(response => response.json().data as Match[])
+            .then(response => response.json() as Match[])
             .catch(this.handleError);
     }
 

@@ -1,10 +1,10 @@
-<h3>Matchs</h3>
+<h2>Matchs:</h2>
 <ul class="matchs">
     <li *ngFor="let match of matchs"
         [class.selected]="match === selectedMatch"
         (click)="onSelect(match)">
-        <span class="badge">{{match.teamDom}} {{match.pDom}}% - {{match.pExt}}% {{match.teamExt}}
-            <br/> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{match.res}}
+        <span class="badge">
+            {{match.nomEquipeHome}} {{match.scoreHome}} {{match.chanceWinHome}} - {{match.chanceWinAway}} {{match.scoreAway}} {{match.equipeAway}}
         </span>
     </li>
     <button (click)="goBack()">Back</button>

@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
@@ -16,10 +17,13 @@ var MatchService = (function () {
         this.http = http;
         this.matchsUrl = 'api/matchs'; // URL to web api
     }
+    MatchService.prototype.setMatchsUrl = function (nameLeague, nameSeason, nameDay) {
+        this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameDay + '/matchs';
+    };
     MatchService.prototype.getMatchs = function () {
         return this.http.get(this.matchsUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     MatchService.prototype.handleError = function (error) {

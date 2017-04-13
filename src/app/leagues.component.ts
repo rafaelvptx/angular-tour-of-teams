@@ -15,25 +15,21 @@ import { SeasonService }            from "./season.service"
 
 export class LeaguesComponent implements OnInit {
 
+    errorMessage: string;
     leagues: League[] = [];
-    seasons: Season[] = [];
     selectedLeague: League;
 
     constructor(
         private router: Router,
-        private leagueService: LeagueService,
-        private seasonService: SeasonService) { }
+        private leagueService: LeagueService) { }
 
     ngOnInit(): void {
         this.leagueService.getLeagues()
-            .then(leagues => this.leagues = leagues.slice(0, 5));
-        this.seasonService.getSeasons()
-            .then(seasons => this.seasons = seasons.slice(0, 5));
+            .then(leagues => this.leagues = leagues);
     }
 
     onSelect(league: League): void {
         this.selectedLeague = league;
         this.router.navigate(['/home/leagues', {name: this.selectedLeague.name}]);
     }
-
 }

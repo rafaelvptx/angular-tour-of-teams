@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
@@ -16,10 +17,13 @@ var DayService = (function () {
         this.http = http;
         this.daysUrl = 'api/days'; // URL to web api
     }
+    DayService.prototype.setDaysUrl = function (nameLeague, nameSeason) {
+        this.daysUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/journees';
+    };
     DayService.prototype.getDays = function () {
         return this.http.get(this.daysUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     DayService.prototype.handleError = function (error) {
