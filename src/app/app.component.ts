@@ -6,9 +6,8 @@ import { Component } from '@angular/core';
   template: `
    <ul>
         <li><a class="active" href="">Home</a></li>
-        <li><a href="">Journ&eacute;es</a></li>
-        <li><a href="">Equipes</a></li>
-         <li><a  href="">Retour</a></li>
+        <li><a href="">Aide</a></li>
+  
    
      
     </ul>

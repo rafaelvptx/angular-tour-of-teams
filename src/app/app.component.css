@@ -31,11 +31,14 @@ ul {
   top: 0;
   width: 100%;
   z-index:1;
+
 }
 
 li {
   float: left;
   text-align: center;
+  font-family: 'Raleway',sans-serif;
+
 }
 
 li a {
@@ -44,22 +47,27 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Raleway',sans-serif;
+  text-transform: uppercase;
+
 
 }
 
 li a:hover:not(.active) {
   background-color: #111;
+
 }
 
 .active {
   background-color: #4CAF50;
+  border-radius: 10px;
 }
 div {
   padding: 20px;
   margin-top: 30px;
-
+  border-radius: 10px;
   height: 1500px;
-
+  border-radius: 10px;
 }
 h3 {
   padding-top: 10px;
@@ -76,3 +84,4 @@ h3 {
   border-radius: 10px;
   border: 3px #404040 dashed;
 }
+
