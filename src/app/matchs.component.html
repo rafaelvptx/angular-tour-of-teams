@@ -1,11 +1,23 @@
 <h3>Statistiques et résultats des Matchs</h3>
+
+
+<div class="datagrid"><table>
+  <thead><tr><th>Equipe domicile</th><th>Score domicile</th><th>% de winrate domicile</th><th>% de winrate exterieur</th><th>Score exterieur</th><th>Equipe exterieur</th></tr></thead>
 <ul class="matchs">
     <li *ngFor="let match of matchs"
         [class.selected]="match === selectedMatch"
         (click)="onSelect(match)">
         <span class="badge">
-            {{match.nomEquipeHome}} {{match.scoreHome}} {{match.chanceWinHome}} - {{match.chanceWinAway}} {{match.scoreAway}} {{match.equipeAway}}
+            <tr><td> {{match.nomEquipeHome}}</td><td> {{match.scoreHome}}</td></tr>
         </span>
     </li>
-  <button (click)="goBack()" class="myButton">Retour</button>
+
 </ul>
+
+
+  <tr class="alt"><td>data</td><td>data</td><td>data</td></tr>
+  <tr><td>data</td><td>data</td><td>data</td></tr>
+  </tbody>
+</table></div>
+<button (click)="goBack()" class="myButton">Retour</button>
+<td> {{match.scoreHome}}</td><td> {{match.chanceWinHome}}</td> <td>{{match.chanceWinAway}}</td> <td>{{match.scoreAway}}</td><td> {{match.equipeAway}}</td>
