@@ -20,6 +20,11 @@ var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
 var day_service_1 = require("./day.service");
 var match_service_1 = require("./match.service");
+/////////////////////////////////////////////////////////////////////////////////////
+// Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
+// Pour plus d'informations:  https://angular.io/docs/ts/latest/guide/appmodule.html
+/////////////////////////////////////////////////////////////////////////////////////
+// @NgModule est un decorateur qui identifies AppModule en tant que classe modulaire.
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,14 +32,19 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
+        // BrowserModule : le module BrowserModule indique que cette application doit fonctionner dans un navigateur.
+        // FormsModule : Permet d'utiliser des formulaire comme les boutons retours.
+        // HttpModule : Ce module inclut les fonctions http
+        // JsonpModule : Ce module inclut les fonctions Json
+        // AppRoutingModule : AppRoutingModule est un module  qui gère les problèmes de routage de l'application.
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
             http_1.JsonpModule,
-            //InMemoryWebApiModule.forRoot(InMemoryDataService),
             app_routing_module_1.AppRoutingModule
         ],
+        // Declaration des différents composants que compose l'application
         declarations: [
             app_component_1.AppComponent,
             leagues_component_1.LeaguesComponent,
@@ -42,7 +52,9 @@ AppModule = __decorate([
             days_component_1.DaysComponent,
             matchs_component_1.MatchsComponent
         ],
+        // Ici declarer les classes ayant leur liaison avec l'API
         providers: [league_service_1.LeagueService, season_service_1.SeasonService, day_service_1.DayService, match_service_1.MatchService],
+        // Le composant racine que Angular crée et insère dans la page Web index.html
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

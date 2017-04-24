@@ -1,5 +1,7 @@
+<!-- Affichage HTML de la page leauge -->
 <h3>Sélectionner la fédération</h3>
 
+<!-- Déroulement et affichages des ligues de la classe "league" -->
 <div class="grid grid-pad">
     <a *ngFor="let league of leagues"
        [class.selected]="league === selectedLeague"
