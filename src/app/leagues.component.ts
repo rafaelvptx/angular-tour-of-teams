@@ -6,7 +6,7 @@ import { Season }                   from "./season"
 
 import { LeagueService }            from "./league.service";
 import { SeasonService }            from "./season.service"
-
+// Permet de gérer l'affichage du composant league
 @Component({
   selector: 'my-leagues',
   templateUrl: './leagues.component.html',

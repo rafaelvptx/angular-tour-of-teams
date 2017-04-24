@@ -15,6 +15,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var season_service_1 = require("./season.service");
+// Permet de gérer l'affichage du composant season
 var SeasonsComponent = (function () {
     function SeasonsComponent(route, router, location, seasonService) {
         this.route = route;
@@ -27,6 +28,7 @@ var SeasonsComponent = (function () {
     }
     SeasonsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        //Récupération des paramétres d'affichage
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['name']; });
         this.seasonService.setSeasonUrl(this.nameLeague);
         this.seasonService.getSeasons()

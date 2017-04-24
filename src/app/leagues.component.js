@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
+// Permet de gérer l'affichage du composant league
 var LeaguesComponent = (function () {
     function LeaguesComponent(router, leagueService, seasonService) {
         this.router = router;

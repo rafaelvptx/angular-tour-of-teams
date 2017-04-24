@@ -13,6 +13,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var day_service_1 = require("./day.service");
+// Permet de gérer l'affichage du composant journée
 var DaysComponent = (function () {
     function DaysComponent(route, location, router, dayService) {
         this.route = route;
@@ -27,6 +28,7 @@ var DaysComponent = (function () {
     };
     DaysComponent.prototype.ngOnInit = function () {
         var _this = this;
+        //Récupération des paramétres d'affichage
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['nameLeague']; });
         this.route.params.subscribe(function (p) { return _this.selectedSeason = p['selectedSeason']; });
         this.dayService.setDaysUrl(this.nameLeague, this.selectedSeason);

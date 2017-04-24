@@ -9,7 +9,7 @@ import { Season }                                           from "./season"
 import { SeasonService }                                    from "./season.service"
 import {League} from "./league";
 import {LeagueService} from "./league.service";
-
+// Permet de gérer l'affichage du composant season
 @Component({
     selector: 'my-seasons',
     templateUrl: './seasons.component.html',
@@ -31,8 +31,9 @@ export class SeasonsComponent implements OnInit {
         private seasonService: SeasonService) { }
 
     ngOnInit(): void  {
-
+        //Récupération des paramétres d'affichage
         this.route.params.subscribe(p => this.nameLeague = p['name']);
+
         this.seasonService.setSeasonUrl(this.nameLeague);
         this.seasonService.getSeasons()
             .then(seasons => this.seasons = seasons);

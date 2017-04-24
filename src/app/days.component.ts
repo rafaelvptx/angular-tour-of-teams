@@ -4,7 +4,7 @@ import { Location }                                 from '@angular/common';
 
 import { Day } from './day';
 import { DayService } from './day.service';
-
+// Permet de gérer l'affichage du composant journée
 @Component({
     selector: 'my-days',
     templateUrl: './days.component.html',
@@ -30,7 +30,7 @@ export class DaysComponent implements OnInit{
     }
 
     ngOnInit(): void {
-
+        //Récupération des paramétres d'affichage
         this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
         this.route.params.subscribe(p => this.selectedSeason = p['selectedSeason']);
 

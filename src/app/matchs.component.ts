@@ -6,7 +6,7 @@ import { Location }                 from '@angular/common';
 import {MatchService}               from "./match.service";
 import {Match}                      from "./match";
 
-
+// Permet de gérer l'affichage du composant match
 @Component({
     selector: 'my-matchs',
     templateUrl: './matchs.component.html',
@@ -28,6 +28,7 @@ export class MatchsComponent implements OnInit{
     ) {}
 
     ngOnInit(): void {
+        //Récupération des paramétres d'affichage
         this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
         this.route.params.subscribe(p => this.nameSeason = p['selectedSeason']);
         this.route.params.subscribe(p => this.selectedDay = p['selectedDay']);
