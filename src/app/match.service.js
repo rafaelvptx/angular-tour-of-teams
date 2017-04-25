@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+// Permet de manipuler l'objet match et d'accèder à l'API
 var MatchService = (function () {
     function MatchService(http) {
         this.http = http;

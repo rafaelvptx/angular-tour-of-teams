@@ -38,9 +38,6 @@ export class MatchsComponent implements OnInit{
         this.getMatchs();
     }
 
-    goBack(): void {
-        this.location.back();
-    }
 
     getMatchs(): void {
         this.matchService.getMatchs().then(matchs => this.matchs = matchs);
@@ -49,5 +46,10 @@ export class MatchsComponent implements OnInit{
     onSelect(match: Match): void {
         this.selectedMatch = match;
     }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 
 }

@@ -9,6 +9,9 @@ import 'rxjs/add/operator/map';
 
 import { League } from './league';
 
+
+// Permet de manipuler l'objet league et d'accèder à l'API
+
 @Injectable()
 export class LeagueService {
 

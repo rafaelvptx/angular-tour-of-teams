@@ -5,6 +5,8 @@ import 'rxjs/add/operator/toPromise';
 
 import { Season } from './season';
 
+
+// Permet de manipuler l'objet service et d'accèder à l'API
 @Injectable()
 export class SeasonService {
 

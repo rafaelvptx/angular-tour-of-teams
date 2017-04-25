@@ -5,6 +5,8 @@ import 'rxjs/add/operator/toPromise';
 
 import { Match } from './match';
 
+// Permet de manipuler l'objet match et d'accèder à l'API
+
 @Injectable()
 export class MatchService {
 
