@@ -20,6 +20,7 @@ var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
 var day_service_1 = require("./day.service");
 var match_service_1 = require("./match.service");
+var team_service_1 = require("./team.service");
 /////////////////////////////////////////////////////////////////////////////////////
 // Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
 // Pour plus d'informations:  https://angular.io/docs/ts/latest/guide/appmodule.html
@@ -53,7 +54,7 @@ AppModule = __decorate([
             matchs_component_1.MatchsComponent
         ],
         // Ici declarer les classes ayant leur liaison avec l'API
-        providers: [league_service_1.LeagueService, season_service_1.SeasonService, day_service_1.DayService, match_service_1.MatchService],
+        providers: [league_service_1.LeagueService, season_service_1.SeasonService, day_service_1.DayService, match_service_1.MatchService, team_service_1.TeamService],
         // Le composant racine que Angular crée et insère dans la page Web index.html
         bootstrap: [app_component_1.AppComponent]
     })

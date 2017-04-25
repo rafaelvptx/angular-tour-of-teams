@@ -12,6 +12,7 @@ import { LeagueService }                from "./league.service";
 import { SeasonService }                from "./season.service";
 import { DayService }                   from "./day.service";
 import { MatchService }                 from "./match.service";
+import {TeamService} from "./team.service";
 
 /////////////////////////////////////////////////////////////////////////////////////
 // Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
@@ -44,7 +45,7 @@ import { MatchService }                 from "./match.service";
   ],
 
   // Ici declarer les classes ayant leur liaison avec l'API
-  providers: [ LeagueService, SeasonService, DayService, MatchService ],
+  providers: [ LeagueService, SeasonService, DayService, MatchService , TeamService ],
 
   // Le composant racine que Angular crée et insère dans la page Web index.html
   bootstrap: [ AppComponent ]

@@ -16,6 +16,10 @@ export class MatchService {
         this.matchsUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/'+ nameDay +'/matchs';
     }
 
+    setMatchsUrlForTeam(nameLeague: String, nameSeason: String, nameTeam: String) {
+        this.matchsUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/'+ nameTeam +'/matchsTeam';
+    }
+
     getMatchs(): Promise<Match[]> {
         return this.http.get(this.matchsUrl)
             .toPromise()
