@@ -18,6 +18,7 @@ export class DaysComponent implements OnInit{
     days: Day[];
     teams: Team[];
     selectedDay: Day;
+    selectedTeam: Team;
     nameLeague: string;
     selectedSeason: string;
 
@@ -55,6 +56,14 @@ export class DaysComponent implements OnInit{
             nameLeague: this.nameLeague,
             selectedSeason: this.selectedSeason,
             selectedDay: this.selectedDay.name}]);
+    }
+
+    onSelectTeam(team: Team): void {
+        this.selectedTeam = team;
+        this.router.navigate(['/home/leagues/seasons/matchsTeam',{
+            nameLeague: this.nameLeague,
+            selectedSeason: this.selectedSeason,
+            selectedTeam: this.selectedTeam.name}]);
     }
 
     goBack(): void {

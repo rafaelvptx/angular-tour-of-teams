@@ -4,6 +4,7 @@ import { LeaguesComponent }                 from './leagues.component';
 import { MatchsComponent }                  from './matchs.component';
 import { DaysComponent}                     from './days.component';
 import { SeasonsComponent}                  from './seasons.component';
+import {MatchsTeamComponent}                from './matchsTeam.component';
 
 // ICI sont affectés les redirections des URL avec l'appel des components
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'home/leagues',  component: SeasonsComponent },
     { path: 'home/leagues/seasons', component: DaysComponent },
     { path: 'home/leagues/seasons/matchs', component: MatchsComponent },
+    { path: 'home/leagues/seasons/matchsTeam', component: MatchsTeamComponent }
 ];
 @NgModule({
     imports: [ RouterModule.forRoot(routes) ],

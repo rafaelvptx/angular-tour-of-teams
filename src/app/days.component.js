@@ -50,6 +50,14 @@ var DaysComponent = (function () {
                 selectedDay: this.selectedDay.name
             }]);
     };
+    DaysComponent.prototype.onSelectTeam = function (team) {
+        this.selectedTeam = team;
+        this.router.navigate(['/home/leagues/seasons/matchsTeam', {
+                nameLeague: this.nameLeague,
+                selectedSeason: this.selectedSeason,
+                selectedTeam: this.selectedTeam.name
+            }]);
+    };
     DaysComponent.prototype.goBack = function () {
         this.location.back();
     };

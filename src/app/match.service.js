@@ -21,6 +21,9 @@ var MatchService = (function () {
     MatchService.prototype.setMatchsUrl = function (nameLeague, nameSeason, nameDay) {
         this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameDay + '/matchs';
     };
+    MatchService.prototype.setMatchsUrlForTeam = function (nameLeague, nameSeason, nameTeam) {
+        this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameTeam + '/matchsTeam';
+    };
     MatchService.prototype.getMatchs = function () {
         return this.http.get(this.matchsUrl)
             .toPromise()

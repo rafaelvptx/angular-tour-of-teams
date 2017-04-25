@@ -4,7 +4,7 @@
 <div class="grid grid-pad">
     <a *ngFor="let team of teams"
        [class.selected]="team === selectedTeam"
-       (click)="onSelect(team)"
+       (click)="onSelectTeam(team)"
        class="col-0-4">
         <div class="module teams">
             <h4>{{team.name}}</h4>
