@@ -14,6 +14,7 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
+// Permet de manipuler l'objet league et d'accèder à l'API
 var LeagueService = (function () {
     function LeagueService(http) {
         this.http = http;

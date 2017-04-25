@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+// Permet de manipuler l'objet match et d'accèder à l'API
 var MatchService = (function () {
     function MatchService(http) {
         this.http = http;
@@ -19,9 +20,6 @@ var MatchService = (function () {
     }
     MatchService.prototype.setMatchsUrl = function (nameLeague, nameSeason, nameDay) {
         this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameDay + '/matchs';
-    };
-    MatchService.prototype.setMatchsUrlForTeam = function (nameLeague, nameSeason, nameTeam) {
-        this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameTeam + '/matchsTeam';
     };
     MatchService.prototype.getMatchs = function () {
         return this.http.get(this.matchsUrl)

@@ -5,6 +5,8 @@ import 'rxjs/add/operator/toPromise';
 
 import { Match } from './match';
 
+// Permet de manipuler l'objet match et d'accèder à l'API
+
 @Injectable()
 export class MatchService {
 
@@ -14,10 +16,6 @@ export class MatchService {
 
     setMatchsUrl(nameLeague: String, nameSeason: String, nameDay: String) {
         this.matchsUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/'+ nameDay +'/matchs';
-    }
-
-    setMatchsUrlForTeam(nameLeague: String, nameSeason: String, nameTeam: String) {
-        this.matchsUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/'+ nameTeam +'/matchsTeam';
     }
 
     getMatchs(): Promise<Match[]> {

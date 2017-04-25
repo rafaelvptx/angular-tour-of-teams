@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-
 import 'rxjs/add/operator/toPromise';
-
 import { Day } from './day';
+
+// Permet de manipuler l'objet day et d'accèder à l'API
 
 @Injectable()
 export class DayService {

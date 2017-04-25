@@ -30,15 +30,15 @@ var MatchsComponent = (function () {
         this.matchService.setMatchsUrl(this.nameLeague, this.nameSeason, this.selectedDay);
         this.getMatchs();
     };
-    MatchsComponent.prototype.goBack = function () {
-        this.location.back();
-    };
     MatchsComponent.prototype.getMatchs = function () {
         var _this = this;
         this.matchService.getMatchs().then(function (matchs) { return _this.matchs = matchs; });
     };
     MatchsComponent.prototype.onSelect = function (match) {
         this.selectedMatch = match;
+    };
+    MatchsComponent.prototype.goBack = function () {
+        this.location.back();
     };
     return MatchsComponent;
 }());
