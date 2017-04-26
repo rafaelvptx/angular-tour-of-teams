@@ -7,8 +7,15 @@
        [class.selected]="league === selectedLeague"
        (click)="onSelect(league)"
        class="col-0-4">
-        <div class="module league">
-            <h4>{{league.name}}</h4>
-        </div>
+      <!-- <div class="module league">
+          <h4>{{league.name}}</h4>
+
+      </div>"-->
+
+    <div class=" ">
+      <img [src] ="'../assets/ligues/'+league.name +'.png'" width = "70px" opacity="0">
+
+
+      </div>
     </a>
 </div>
