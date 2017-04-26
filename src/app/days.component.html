@@ -6,13 +6,17 @@
        [class.selected]="team === selectedTeam"
        (click)="onSelectTeam(team)"
        class="col-0-4">
-        <div class="module teams">
-            <h4>{{team.name}}</h4>
-        </div>
-    </a>
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<!-- Affichage HTML de la page journée -->
+
+
+        <div class=" ">
+            <img [src] ="'../assets/equipes/'+team.name +'.png'" width = "48px" opacity="0">
+            <!--  <h4>{{team.name}}</h4>"-->
+
+         </div>
+     </a>
+ </div>
+ <br><br><br>
+ <!-- Affichage HTML de la page journée   [ngStyle]="{ 'background-image': 'url(../assets/equipes/PSG.png)'}"-->
 <h3>Séléctionner une journée</h3>
 
 <!-- Déroulement et affichages des journées de la classe "day" -->
