@@ -63,7 +63,6 @@ h4 {
 }
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
-
 }
 @media (max-width: 600px) {
   .module {
