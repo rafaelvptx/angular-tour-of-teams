@@ -11,7 +11,7 @@
       [class.selected]="match === selectedMatch"
       (click)="onSelect(match)">
         <span class="badge"><br>
-           {{match.nomEquipeHome}}
+           {{match.teamHome}}
         </span>
   </a></td>
 
@@ -64,7 +64,7 @@
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-            {{match.equipeAway}}
+            {{match.teamAway}}
         </span>
       </a>
     </td>
