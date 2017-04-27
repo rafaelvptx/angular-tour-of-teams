@@ -4,7 +4,7 @@ body
   background-image: url("fond2.jpg");
 
 
-  position: fixed;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;

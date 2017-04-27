@@ -2,7 +2,7 @@
 <h3>Statistiques et résultats des Matchs</h3>
 
 <!-- Déroulement et affichages des matchs de la classe "match" -->
-<div class="datagrid"><table>
+<div class="datagrid" ><table>
   <thead><tr><th>Equipe domicile</th><th>% de winrate domicile</th><th>Score domicile</th><th>Score exterieur</th><th>% de winrate exterieur</th><th>Equipe exterieur</th></tr></thead>
 
 
@@ -15,18 +15,18 @@
         </span>
   </a></td>
 
-    <td>
+    <td width= 15%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-       {{match.chanceWinHome}}
+       {{match.chanceWinHome | number:0}}
         </span>
       </a>
     </td>
 
 
-    <td>
+    <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
@@ -37,7 +37,7 @@
     </td>
 
 
-    <td>
+    <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
@@ -48,12 +48,12 @@
     </td>
 
 
-    <td>
+    <td width= 15%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-{{match.chanceWinAway}}
+{{match.chanceWinAway  | number:0}}
         </span>
       </a>
     </td>
@@ -72,7 +72,6 @@
   </tr>
   </tbody>
 </table></div>
-
 
 
 <button (click)="goBack()" class="myButton">Retour</button>

@@ -17,18 +17,18 @@
         </span>
     </a></td>
 
-    <td>
+    <td >
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-          {{match.chanceWinHome}}
+          {{match.chanceWinHome | number:0}}
         </span>
       </a>
     </td>
 
 
-    <td>
+    <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
@@ -39,7 +39,7 @@
     </td>
 
 
-    <td>
+    <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
@@ -55,7 +55,7 @@
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-          {{match.chanceWinAway}}
+          {{match.chanceWinAway | number:0}}
         </span>
       </a>
     </td>
@@ -73,7 +73,5 @@
   </tr>
     </tbody>
 </table></div>
-
-
 
 <button (click)="goBack()" class="myButton">Retour</button>

@@ -105,3 +105,37 @@ h4 {
   position:relative;
   top:1px;
 }
+
+button {
+  position:relative;
+  margin-top:10%;
+  background:#333;
+  border:1px solid grey;
+  padding:20px;
+  font-size:0.9em;
+  color:white;
+  box-shadow:4px 4px 0px 0px grey;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:700;
+  letter-spacing:5px;
+  text-transform:uppercase;
+
+}
+
+button:hover {
+  left:4px;
+  top:4px;
+  box-shadow:none;
+  transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+}
+
+img:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+  cursor:  pointer;
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari */
+  transform: rotate(20deg);
+}
