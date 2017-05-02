@@ -1,7 +1,8 @@
 // utilisé par l'objet day
 export class Match {
-    teamHome:      string;
-    teamAway:         string;
+    day:                number;
+    teamHome:           string;
+    teamAway:           string;
     scoreHome:          number;
     scoreAway:          number;
     chanceWinHome:      number;
