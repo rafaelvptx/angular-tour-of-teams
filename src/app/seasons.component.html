@@ -2,7 +2,7 @@
 <h3>Sélectionner la saison</h3>
 
 <!-- Déroulement et affichages des saisons de la classe "seasons" -->
-<div class="grid grid-pad">
+<div id="grid">
     <a *ngFor="let season of seasons"
        [class.selected]="season === selectedSeason"
        (click)="onSelect(season)"

@@ -2,54 +2,38 @@
 <h3>Statistiques et résultats des Matchs</h3>
 
 <!-- Déroulement et affichages des matchs de la classe "match" -->
-<div class="datagrid"><table>
-  <thead><tr><th>Journée</th><th>Equipe domicile</th><th>% de winrate domicile</th><th>Score domicile</th><th>Score exterieur</th><th>% de winrate exterieur</th><th>Equipe exterieur</th></tr></thead>
-
-
-
+<div class="datagrid">
+  <table>
+  <thead><tr><th>Journée</th><th>Equipe D</th><th>% winrate D</th><th>Score D</th><th>Score E</th><th>% winrate E</th><th>Equipe E</th></tr></thead>
 
   <tr><td>
-    <a  *ngFor="let match of matchs"
-        [class.selected]="match === selectedMatch"
-        (click)="onSelect(match)">
+    <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
            {{match.day}}
         </span>
     </a></td>
     <td>
-    <a  *ngFor="let match of matchs"
-        [class.selected]="match === selectedMatch"
-        (click)="onSelect(match)">
+    <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
            {{match.teamHome}}
         </span>
     </a></td>
     <td >
-      <a  *ngFor="let match of matchs"
-          [class.selected]="match === selectedMatch"
-          (click)="onSelect(match)">
+      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
           {{match.chanceWinHome | number:0}}
         </span>
       </a>
     </td>
-
-
     <td width= 10%>
-      <a  *ngFor="let match of matchs"
-          [class.selected]="match === selectedMatch"
-          (click)="onSelect(match)">
+      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
            {{match.scoreHome}}
         </span>
       </a>
     </td>
-
-
     <td width= 10%>
-      <a  *ngFor="let match of matchs"
-          [class.selected]="match === selectedMatch"
-          (click)="onSelect(match)">
+      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
           {{match.scoreAway}}
         </span>
@@ -58,20 +42,14 @@
 
 
     <td>
-      <a  *ngFor="let match of matchs"
-          [class.selected]="match === selectedMatch"
-          (click)="onSelect(match)">
+      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
           {{match.chanceWinAway | number:0}}
         </span>
       </a>
     </td>
-
-
     <td >
-      <a  *ngFor="let match of matchs"
-          [class.selected]="match === selectedMatch"
-          (click)="onSelect(match)">
+      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
         <span class="badge"><br>
             {{match.teamAway}}
         </span>

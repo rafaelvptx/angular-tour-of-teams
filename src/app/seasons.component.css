@@ -1,15 +1,12 @@
-[class*='col-'] {
-  float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  border-radius: 10px;
+#grid {
+  text-align: center;
+  margin:auto;
+  padding-top: 20px;
 }
-[class*='col-']:last-of-type {
-  padding-right: 0;
-  border-radius: 10px;
-}
+
 a {
   text-decoration: none;
+  padding-left: 20px;
 }
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -30,15 +27,16 @@ h3 {
   text-align: center;
   border-radius: 10px;
   border: 3px #404040 dashed;
+  width: 75%;
+  text-align: center;
+  margin: auto;
 }
 
 h4 {
   position: relative;
   border-radius: 10px;
 }
-.grid {
-  margin: 0;
-}
+
 .col-1-4 {
   width: 25%;
 }
@@ -56,29 +54,6 @@ h4 {
   cursor: pointer;
   color: #333;
 }
-.grid-pad {
-  padding: 10px 0;
-  }
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-
-}
-@media (max-width: 600px) {
-  .module {
-    font-size: 10px;
-    max-height: 75px; }
-}
-
-
-
-@media (max-width: 1024px) {
-  .grid {
-    margin: 0;
-  }
-  .module {
-    min-width: 60px;
-  }
-}
 
 .myButton {
   background-color:#44c767;
@@ -91,7 +66,6 @@ h4 {
   color:#ffffff;
   font-family:Arial;
   font-size:17px;
-  padding:16px 31px;
   text-decoration:none;
   text-shadow:0px 1px 0px #2f6627;
 }
@@ -112,7 +86,6 @@ body {
 
 button {
   position:relative;
-  margin-top:10%;
   background:#333;
   border:1px solid grey;
   padding:20px;
