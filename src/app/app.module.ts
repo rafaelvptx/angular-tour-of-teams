@@ -12,8 +12,9 @@ import { LeagueService }                from "./league.service";
 import { SeasonService }                from "./season.service";
 import { DayService }                   from "./day.service";
 import { MatchService }                 from "./match.service";
-import {TeamService} from "./team.service";
-import {MatchsTeamComponent} from "./matchsTeam.component";
+import {TeamService}                    from "./team.service";
+import {MatchsTeamComponent}            from "./matchsTeam.component";
+import {AproposComponent}               from "./apropos.component";
 
 /////////////////////////////////////////////////////////////////////////////////////
 // Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
@@ -43,7 +44,8 @@ import {MatchsTeamComponent} from "./matchsTeam.component";
     SeasonsComponent,
     DaysComponent,
     MatchsComponent,
-    MatchsTeamComponent
+    MatchsTeamComponent,
+    AproposComponent
   ],
 
   // Ici declarer les classes ayant leur liaison avec l'API

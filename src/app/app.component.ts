@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
    <ul>
         <li><a class="active" href="">Home</a></li>
-        <li><a href="">Aide</a></li>
+        <li><a href="home/apropos">A propos</a></li>
   
    
      
