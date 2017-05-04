@@ -1,7 +1,7 @@
 #grid {
   text-align: center;
-  margin:auto;
   padding-top: 20px;
+  margin: auto;
 }
 
 a {
@@ -28,8 +28,8 @@ h3 {
   border-radius: 10px;
   border: 3px #404040 dashed;
   width: 75%;
-  text-align: center;
-  margin: auto;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 h4 {
@@ -55,28 +55,6 @@ h4 {
   color: #333;
 }
 
-.myButton {
-  background-color:#44c767;
-  -moz-border-radius:28px;
-  -webkit-border-radius:28px;
-  border-radius:28px;
-  border:1px solid #18ab29;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Arial;
-  font-size:17px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-  background-color:#5cbf2a;
-}
-.myButton:active {
-  position:relative;
-  top:1px;
-}
-
 body {
   background:#333;
   text-align:center;
@@ -89,11 +67,11 @@ button {
   background:#333;
   border:1px solid grey;
   padding:20px;
-  font-size:0.9em;
+  font-size:0.5em;
   color:white;
   box-shadow:4px 4px 0px 0px grey;
   font-family: 'Open Sans', sans-serif;
-  font-weight:700;
+  font-weight:600;
   letter-spacing:5px;
   text-transform:uppercase;
   cursor:  pointer;

@@ -1,7 +1,7 @@
 <!-- Affichage HTML de la page équipe -->
 <h3>Séléctionner une équipe/journée</h3>
 
-<div class="grid grid-pad">
+<div id="grid">
     <a *ngFor="let team of teams"
        [class.selected]="team === selectedTeam"
        (click)="onSelectTeam(team)"
@@ -9,17 +9,16 @@
 
 
         <div class=" ">
-            <img [src] ="'../assets/equipes/'+team.name +'.png'" width = "48px" opacity="0">
+            <img [src] ="'../assets/equipes/'+team.name +'.png'" width = "35px" opacity="0">
             <!--  <h4>{{team.name}}</h4>"-->
 
          </div>
      </a>
  </div>
- <br><br><br><br><br><br><br>
  <!-- Affichage HTML de la page journée   [ngStyle]="{ 'background-image': 'url(../assets/equipes/PSG.png)'}"-->
 
 <!-- Déroulement et affichages des journées de la classe "day" -->
-<div class="grid grid-pad">
+<div id="grid">
   <a *ngFor="let day of days"
      [class.selected]="day === selectedDay"
      (click)="onSelect(day)"
@@ -28,8 +27,4 @@
       <h4>{{day.name}}</h4>
     </div>
   </a>
-
-<!-- Bouton retour -->
-<button (click)="goBack()" class="myButton">Retour</button>
-
-
+</div>

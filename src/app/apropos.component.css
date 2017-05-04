@@ -1,3 +1,10 @@
+#grid {
+  text-align: start;
+  padding-top: 20px;
+  width: 75%;
+  margin: auto;
+}
+
 [class*='col-'] {
   float: left;
   padding-right: 20px;
@@ -30,6 +37,9 @@ h3 {
   text-align: center;
   border-radius: 10px;
   border: 3px #404040 dashed;
+  width: 75%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 h4 {
@@ -143,18 +153,40 @@ button:hover {
 }
 
 
-
-.datagrid table
-{
-  border-collapse: collapse;
-  text-align: center; width: 100%;
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif;
+  background: #fff;
+  border: 1px solid #333333;
+  text-align: center;
+  width: 35%;
+  margin-left:auto;
+  margin-right:auto;
 }
-.datagrid
-{font: normal 12px/150% Arial,
-Helvetica, sans-serif; background: #fff;
-  overflow: hidden; border: 1px solid #333333;
-  -webkit-border-radius: 3px; -moz-border-radius: 3px;
-  border-radius: 3px; }.datagrid table td,
 
-                       .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #333333), color-stop(1, #333333) );background:-moz-linear-gradient( center top, #333333 5%, #333333 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333');background-color:#333333; color:#FFFFFF; font-size: 15px; font-weight: bold; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #333333; border-left: 1px solid #D2D2D2;font-size: 12px;font-weight: normal; }.datagrid table tbody .alt td { background: #D2D2D2; color: #000000; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }
+.datagrid table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
 
+.datagrid table thead th {
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333');
+  background-color:#333333;
+  color:#FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.datagrid table tbody td {
+  color: #333333;
+  border-left: 1px solid #D2D2D2;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+}
+.datagrid table tbody .alt td {
+  background: #D2D2D2;
+  color: #000000;
+  text-align: center;
+}

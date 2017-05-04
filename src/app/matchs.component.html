@@ -3,7 +3,7 @@
 
 <!-- Déroulement et affichages des matchs de la classe "match" -->
 <div class="datagrid" ><table>
-  <thead><tr><th>Equipe domicile</th><th>% de winrate domicile</th><th>Score domicile</th><th>Score exterieur</th><th>% de winrate exterieur</th><th>Equipe exterieur</th></tr></thead>
+  <thead><tr><th>Equipe 1</th><th>% winrate 1</th><th>Score 1</th><th>Score 2</th><th>% winrate 2</th><th>Equipe 2</th></tr></thead>
 
 
   <tr><td>
@@ -31,7 +31,7 @@
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-           {{match.scoreHome}}
+           {{match.scoreHome == -1 ?  "NA" :  match.scoreHome }}
         </span>
       </a>
     </td>
@@ -42,7 +42,7 @@
           [class.selected]="match === selectedMatch"
           (click)="onSelect(match)">
         <span class="badge"><br>
-          {{match.scoreAway}}
+          {{match.scoreAway == -1 ?  "NA" :  match.scoreAway }}
         </span>
       </a>
     </td>
@@ -81,6 +81,3 @@
   <tr ><td>0% - 45%</td><td>45% - 50%</td><td>50% - 55%</td><td>55% - 100%</td></tr>
   <tr class="alt"><td>Défaite</td><td>Défaite / Nul</td><td>Nul / Victoire</td><td>Victoire</td></tr>
 </table></div>
-
-
-<button (click)="goBack()" class="myButton">Retour</button>
