@@ -14,7 +14,7 @@ var days_component_1 = require("./days.component");
 var seasons_component_1 = require("./seasons.component");
 var matchsTeam_component_1 = require("./matchsTeam.component");
 var apropos_component_1 = require("./apropos.component");
-// ICI sont affectés les redirections des URL avec l'appel des components
+// ICI sont affectés les redirections des URL avec league'appel des components
 var routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: leagues_component_1.LeaguesComponent },

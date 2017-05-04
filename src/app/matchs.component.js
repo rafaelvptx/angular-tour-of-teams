@@ -14,7 +14,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var match_service_1 = require("./match.service");
-// Permet de gérer l'affichage du composant match
+// Permet de gérer league'affichage du composant match
 var MatchsComponent = (function () {
     function MatchsComponent(matchService, route, location) {
         this.matchService = matchService;
@@ -24,9 +24,9 @@ var MatchsComponent = (function () {
     MatchsComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Récupération des paramétres d'affichage
-        this.route.params.subscribe(function (p) { return _this.nameLeague = p['nameLeague']; });
-        this.route.params.subscribe(function (p) { return _this.nameSeason = p['selectedSeason']; });
-        this.route.params.subscribe(function (p) { return _this.selectedDay = p['selectedDay']; });
+        this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
+        this.route.params.subscribe(function (p) { return _this.nameSeason = p['s']; });
+        this.route.params.subscribe(function (p) { return _this.selectedDay = p['d']; });
         this.matchService.setMatchsUrl(this.nameLeague, this.nameSeason, this.selectedDay);
         this.getMatchs();
     };

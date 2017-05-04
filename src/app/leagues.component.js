@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
-// Permet de gérer l'affichage du composant league
+// Permet de gérer league'affichage du composant league
 var LeaguesComponent = (function () {
     function LeaguesComponent(router, leagueService, seasonService) {
         this.router = router;
@@ -30,8 +30,8 @@ var LeaguesComponent = (function () {
             .then(function (seasons) { return _this.seasons = seasons.slice(0, 5); });
     };
     LeaguesComponent.prototype.onSelect = function (league) {
-        this.selectedLeague = league;
-        this.router.navigate(['/home/leagues', { name: this.selectedLeague.name }]);
+        this.l = league;
+        this.router.navigate(['/home/leagues', { l: this.l.name }]);
     };
     return LeaguesComponent;
 }());

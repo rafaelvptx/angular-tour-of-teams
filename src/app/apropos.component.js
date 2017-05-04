@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-// Permet de gérer l'affichage du composant league
+// Permet de gérer league'affichage du composant league
 var AproposComponent = (function () {
     function AproposComponent() {
     }

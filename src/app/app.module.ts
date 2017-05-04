@@ -17,7 +17,7 @@ import {MatchsTeamComponent}            from "./matchsTeam.component";
 import {AproposComponent}               from "./apropos.component";
 
 /////////////////////////////////////////////////////////////////////////////////////
-// Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
+// Cette classe décrit comment les éléments de league'application s'intègrent entre eux.
 // Pour plus d'informations:  https://angular.io/docs/ts/latest/guide/appmodule.html
 /////////////////////////////////////////////////////////////////////////////////////
 
@@ -28,7 +28,7 @@ import {AproposComponent}               from "./apropos.component";
   // FormsModule : Permet d'utiliser des formulaire comme les boutons retours.
   // HttpModule : Ce module inclut les fonctions http
   // JsonpModule : Ce module inclut les fonctions Json
-  // AppRoutingModule : AppRoutingModule est un module  qui gère les problèmes de routage de l'application.
+  // AppRoutingModule : AppRoutingModule est un module  qui gère les problèmes de routage de league'application.
   imports: [
     BrowserModule,
     FormsModule,
@@ -37,7 +37,7 @@ import {AproposComponent}               from "./apropos.component";
     AppRoutingModule
   ],
 
-  // Declaration des différents composants que compose l'application
+  // Declaration des différents composants que compose league'application
   declarations: [
     AppComponent,
     LeaguesComponent,
@@ -48,7 +48,7 @@ import {AproposComponent}               from "./apropos.component";
     AproposComponent
   ],
 
-  // Ici declarer les classes ayant leur liaison avec l'API
+  // Ici declarer les classes ayant leur liaison avec league'API
   providers: [ LeagueService, SeasonService, DayService, MatchService , TeamService ],
 
   // Le composant racine que Angular crée et insère dans la page Web index.html

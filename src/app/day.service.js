@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-// Permet de manipuler l'objet day et d'accèder à l'API
+// Permet de manipuler league'objet day et d'accèder à league'API
 var DayService = (function () {
     function DayService(http) {
         this.http = http;

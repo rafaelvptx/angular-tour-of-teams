@@ -14,7 +14,7 @@ var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var day_service_1 = require("./day.service");
 var team_service_1 = require("./team.service");
-// Permet de gérer l'affichage du composant journée
+// Permet de gérer league'affichage du composant journée
 var DaysComponent = (function () {
     function DaysComponent(route, location, router, dayService, teamService) {
         this.route = route;
@@ -35,8 +35,8 @@ var DaysComponent = (function () {
     DaysComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Récupération des paramétres d'affichage
-        this.route.params.subscribe(function (p) { return _this.nameLeague = p['nameLeague']; });
-        this.route.params.subscribe(function (p) { return _this.selectedSeason = p['selectedSeason']; });
+        this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
+        this.route.params.subscribe(function (p) { return _this.selectedSeason = p['s']; });
         this.dayService.setDaysUrl(this.nameLeague, this.selectedSeason);
         this.teamService.setTeamsUrl(this.nameLeague, this.selectedSeason);
         this.getDays();
@@ -45,17 +45,17 @@ var DaysComponent = (function () {
     DaysComponent.prototype.onSelect = function (day) {
         this.selectedDay = day;
         this.router.navigate(['/home/leagues/seasons/matchs', {
-                nameLeague: this.nameLeague,
-                selectedSeason: this.selectedSeason,
-                selectedDay: this.selectedDay.name
+                l: this.nameLeague,
+                s: this.selectedSeason,
+                d: this.selectedDay.name
             }]);
     };
     DaysComponent.prototype.onSelectTeam = function (team) {
         this.selectedTeam = team;
         this.router.navigate(['/home/leagues/seasons/matchsTeam', {
-                nameLeague: this.nameLeague,
-                selectedSeason: this.selectedSeason,
-                selectedTeam: this.selectedTeam.name
+                l: this.nameLeague,
+                s: this.selectedSeason,
+                t: this.selectedTeam.name
             }]);
     };
     DaysComponent.prototype.goBack = function () {

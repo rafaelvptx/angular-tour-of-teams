@@ -6,7 +6,7 @@ import { Day } from './day';
 import { DayService } from './day.service';
 import {TeamService} from "./team.service";
 import {Team} from "./team";
-// Permet de gérer l'affichage du composant journée
+// Permet de gérer league'affichage du composant journée
 @Component({
     selector: 'my-days',
     templateUrl: './days.component.html',
@@ -40,8 +40,8 @@ export class DaysComponent implements OnInit{
 
     ngOnInit(): void {
         //Récupération des paramétres d'affichage
-        this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
-        this.route.params.subscribe(p => this.selectedSeason = p['selectedSeason']);
+        this.route.params.subscribe(p => this.nameLeague = p['l']);
+        this.route.params.subscribe(p => this.selectedSeason = p['s']);
 
         this.dayService.setDaysUrl(this.nameLeague,this.selectedSeason);
         this.teamService.setTeamsUrl(this.nameLeague,this.selectedSeason);
@@ -53,17 +53,17 @@ export class DaysComponent implements OnInit{
     onSelect(day: Day): void {
         this.selectedDay = day;
         this.router.navigate(['/home/leagues/seasons/matchs',{
-            nameLeague: this.nameLeague,
-            selectedSeason: this.selectedSeason,
-            selectedDay: this.selectedDay.name}]);
+            l: this.nameLeague,
+            s: this.selectedSeason,
+            d: this.selectedDay.name}]);
     }
 
     onSelectTeam(team: Team): void {
         this.selectedTeam = team;
         this.router.navigate(['/home/leagues/seasons/matchsTeam',{
-            nameLeague: this.nameLeague,
-            selectedSeason: this.selectedSeason,
-            selectedTeam: this.selectedTeam.name}]);
+            l: this.nameLeague,
+            s: this.selectedSeason,
+            t: this.selectedTeam.name}]);
     }
 
     goBack(): void {

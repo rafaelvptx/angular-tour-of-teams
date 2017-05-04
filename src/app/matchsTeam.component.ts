@@ -6,7 +6,7 @@ import { Location }                 from '@angular/common';
 import {MatchService}               from "./match.service";
 import {Match}                      from "./match";
 
-// Permet de gérer l'affichage du composant match en fonction d'une equipe
+// Permet de gérer league'affichage du composant match en fonction d'une equipe
 @Component({
     selector: 'my-matchs',
     templateUrl: './matchsTeam.component.html',
@@ -29,9 +29,9 @@ export class MatchsTeamComponent implements OnInit{
 
     ngOnInit(): void {
         //Récupération des paramétres d'affichage
-        this.route.params.subscribe(p => this.nameLeague = p['nameLeague']);
-        this.route.params.subscribe(p => this.nameSeason = p['selectedSeason']);
-        this.route.params.subscribe(p => this.selectedTeam = p['selectedTeam']);
+        this.route.params.subscribe(p => this.nameLeague = p['l']);
+        this.route.params.subscribe(p => this.nameSeason = p['s']);
+        this.route.params.subscribe(p => this.selectedTeam = p['t']);
 
         this.matchService.setMatchsUrlForTeam(this.nameLeague, this.nameSeason, this.selectedTeam);
 

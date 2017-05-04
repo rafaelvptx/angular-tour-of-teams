@@ -15,7 +15,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var season_service_1 = require("./season.service");
-// Permet de gérer l'affichage du composant season
+// Permet de gérer league'affichage du composant season
 var SeasonsComponent = (function () {
     function SeasonsComponent(route, router, location, seasonService) {
         this.route = route;
@@ -29,14 +29,14 @@ var SeasonsComponent = (function () {
     SeasonsComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Récupération des paramétres d'affichage
-        this.route.params.subscribe(function (p) { return _this.nameLeague = p['name']; });
+        this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
         this.seasonService.setSeasonUrl(this.nameLeague);
         this.seasonService.getSeasons()
             .then(function (seasons) { return _this.seasons = seasons; });
     };
     SeasonsComponent.prototype.onSelect = function (season) {
         this.selectedSeason = season;
-        this.router.navigate(['/home/leagues/seasons', { nameLeague: this.nameLeague, selectedSeason: this.selectedSeason.name }]);
+        this.router.navigate(['/home/leagues/seasons', { l: this.nameLeague, s: this.selectedSeason.name }]);
     };
     SeasonsComponent.prototype.goBack = function () {
         this.location.back();

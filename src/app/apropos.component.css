@@ -5,6 +5,10 @@
   margin: auto;
 }
 
+#name{
+  text-align: right;
+}
+
 [class*='col-'] {
   float: left;
   padding-right: 20px;
@@ -36,7 +40,7 @@ h3 {
   letter-spacing: .05em;
   text-align: center;
   border-radius: 10px;
-  border: 3px #404040 dashed;
+  border: 1px #404040 solid;
   width: 75%;
   margin-left:auto;
   margin-right:auto;
@@ -118,10 +122,6 @@ button:hover {
 #divImg {
   text-align: center;
   margin: auto;
-}
-
-.thumbnail {
-
 }
 
 .image {

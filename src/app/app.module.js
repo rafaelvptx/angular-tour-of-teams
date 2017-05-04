@@ -24,7 +24,7 @@ var team_service_1 = require("./team.service");
 var matchsTeam_component_1 = require("./matchsTeam.component");
 var apropos_component_1 = require("./apropos.component");
 /////////////////////////////////////////////////////////////////////////////////////
-// Cette classe décrit comment les éléments de l'application s'intègrent entre eux.
+// Cette classe décrit comment les éléments de league'application s'intègrent entre eux.
 // Pour plus d'informations:  https://angular.io/docs/ts/latest/guide/appmodule.html
 /////////////////////////////////////////////////////////////////////////////////////
 // @NgModule est un decorateur qui identifies AppModule en tant que classe modulaire.
@@ -39,7 +39,7 @@ AppModule = __decorate([
         // FormsModule : Permet d'utiliser des formulaire comme les boutons retours.
         // HttpModule : Ce module inclut les fonctions http
         // JsonpModule : Ce module inclut les fonctions Json
-        // AppRoutingModule : AppRoutingModule est un module  qui gère les problèmes de routage de l'application.
+        // AppRoutingModule : AppRoutingModule est un module  qui gère les problèmes de routage de league'application.
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
@@ -47,7 +47,7 @@ AppModule = __decorate([
             http_1.JsonpModule,
             app_routing_module_1.AppRoutingModule
         ],
-        // Declaration des différents composants que compose l'application
+        // Declaration des différents composants que compose league'application
         declarations: [
             app_component_1.AppComponent,
             leagues_component_1.LeaguesComponent,
@@ -57,7 +57,7 @@ AppModule = __decorate([
             matchsTeam_component_1.MatchsTeamComponent,
             apropos_component_1.AproposComponent
         ],
-        // Ici declarer les classes ayant leur liaison avec l'API
+        // Ici declarer les classes ayant leur liaison avec league'API
         providers: [league_service_1.LeagueService, season_service_1.SeasonService, day_service_1.DayService, match_service_1.MatchService, team_service_1.TeamService],
         // Le composant racine que Angular crée et insère dans la page Web index.html
         bootstrap: [app_component_1.AppComponent]

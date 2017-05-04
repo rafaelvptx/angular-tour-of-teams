@@ -1,12 +1,13 @@
 import { Component, OnInit }        from '@angular/core';
 import { Router }                   from '@angular/router';
 
-import { League }                   from "./league";
-import { Season }                   from "./season"
+import { League }                   from './league';
+import { Season }                   from './season';
 
-import { LeagueService }            from "./league.service";
-import { SeasonService }            from "./season.service"
-// Permet de gérer l'affichage du composant league
+import { LeagueService }            from './league.service';
+import { SeasonService }            from './season.service';
+
+// Permet de gérer league'affichage du composant league
 @Component({
   selector: 'my-leagues',
   templateUrl: './leagues.component.html',
@@ -17,7 +18,7 @@ export class LeaguesComponent implements OnInit {
 
   leagues: League[] = [];
   seasons: Season[] = [];
-  selectedLeague: League;
+  l: League;
 
   constructor(
     private router: Router,
@@ -32,8 +33,8 @@ export class LeaguesComponent implements OnInit {
   }
 
   onSelect(league: League): void {
-    this.selectedLeague = league;
-    this.router.navigate(['/home/leagues', {name: this.selectedLeague.name}]);
+    this.l = league;
+    this.router.navigate(['/home/leagues', {l: this.l.name}]);
   }
 
 }

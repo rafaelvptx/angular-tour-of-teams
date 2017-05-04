@@ -40,33 +40,12 @@ h3 {
     letter-spacing: .05em;
     text-align: center;
     border-radius: 10px;
-    border: 3px #404040 dashed;
+    border: 1px #404040 solid;
     width: 75%;
     margin-left:auto;
     margin-right:auto;
 }
-.myButton {
-    background-color:#44c767;
-    -moz-border-radius:28px;
-    -webkit-border-radius:28px;
-    border-radius:28px;
-    border:1px solid #18ab29;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:Arial;
-    font-size:17px;
-    padding:16px 31px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
-}
-.myButton:hover {
-    background-color:#5cbf2a;
-}
-.myButton:active {
-    position:relative;
-    top:1px;
-}
+
 button {
   position:relative;
   background:#333;
@@ -99,6 +78,10 @@ button:hover {
     width: 50%;
     margin-left:auto;
     margin-right:auto;
+}
+
+#datagridInfos {
+    width: 30%;
 }
 
 .datagrid table {

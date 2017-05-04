@@ -3,7 +3,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Day } from './day';
 
-// Permet de manipuler l'objet day et d'accèder à l'API
+// Permet de manipuler league'objet day et d'accèder à league'API
 
 @Injectable()
 export class DayService {

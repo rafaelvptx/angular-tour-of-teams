@@ -8,7 +8,7 @@ import {MatchsTeamComponent}                from './matchsTeam.component';
 import {AproposComponent}                   from './apropos.component';
 
 
-// ICI sont affectés les redirections des URL avec l'appel des components
+// ICI sont affectés les redirections des URL avec league'appel des components
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',  component: LeaguesComponent },

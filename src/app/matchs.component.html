@@ -1,11 +1,9 @@
 <!-- Affichage HTML de la page Matchs -->
 <h3>  Statistiques et résultats des Matchs  </h3>
-
+<br>
 <!-- Déroulement et affichages des matchs de la classe "match" -->
 <div class="datagrid" ><table>
   <thead><tr><th>Equipe 1</th><th>% winrate 1</th><th>Score 1</th><th>Score 2</th><th>% winrate 2</th><th>Equipe 2</th></tr></thead>
-
-
   <tr><td>
   <a  *ngFor="let match of matchs"
       [class.selected]="match === selectedMatch"
@@ -14,7 +12,6 @@
            {{match.teamHome}}
         </span>
   </a></td>
-
     <td width= 15%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
@@ -24,8 +21,6 @@
         </span>
       </a>
     </td>
-
-
     <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
@@ -35,8 +30,6 @@
         </span>
       </a>
     </td>
-
-
     <td width= 10%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
@@ -46,8 +39,6 @@
         </span>
       </a>
     </td>
-
-
     <td width= 15%>
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
@@ -57,8 +48,6 @@
         </span>
       </a>
     </td>
-
-
     <td >
       <a  *ngFor="let match of matchs"
           [class.selected]="match === selectedMatch"
@@ -68,15 +57,14 @@
         </span>
       </a>
     </td>
-
   </tr>
   </tbody>
 </table></div>
 
 <br>
-<br><br>
+<br>
 
-<div class="datagrid"><table>
+<div class="datagrid" id="datagridInfos"><table>
   <thead colspan="4"><tr colspan="4"><th colspan="4">Statistique (victoire, défaite, nul)</th></tr></thead>
   <tr ><td>0% - 45%</td><td>45% - 50%</td><td>50% - 55%</td><td>55% - 100%</td></tr>
   <tr class="alt"><td>Défaite</td><td>Défaite / Nul</td><td>Nul / Victoire</td><td>Victoire</td></tr>
