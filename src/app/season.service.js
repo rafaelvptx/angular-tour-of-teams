@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-// Permet de manipuler league'objet service et d'accèder à league'API
+// Manipulate page et object season + link API
 var SeasonService = (function () {
     function SeasonService(http) {
         this.http = http;
@@ -28,15 +28,8 @@ var SeasonService = (function () {
             .catch(this.handleError);
     };
     SeasonService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred season service', error); // throw error
         return Promise.reject(error.message || error);
-    };
-    SeasonService.prototype.getSeason = function (id) {
-        var url = this.seasonsUrl + "/" + id;
-        return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
     };
     return SeasonService;
 }());

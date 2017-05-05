@@ -1,69 +1,80 @@
 <!-- Affichage HTML de la page Matchs -->
-<h3>Statistiques et résultats des Matchs</h3>
-<br>
-<!-- Déroulement et affichages des matchs de la classe "match" -->
+<h3>Statistiques et résultats des Matchs</h3><br>
+<!-- Déroulement et affichages des matchs by team -->
 <div class="datagrid">
   <table>
-  <thead><tr><th>J</th><th>Equipe 1</th><th>% winrate 1</th><th>Score 1</th><th>Score 2</th><th>% winrate 2</th><th>Equipe 2</th></tr></thead>
-
-  <tr><td>
-    <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-           {{match.day}}
-        </span>
-    </a></td>
-    <td>
-    <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-           {{match.teamHome}}
-        </span>
-    </a></td>
-    <td >
-      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-          {{match.chanceWinHome | number:0}}
-        </span>
-      </a>
-    </td>
-    <td width= 10%>
-      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-           {{match.scoreHome == -1 ?  "NA" :  match.scoreHome }}
-        </span>
-      </a>
-    </td>
-    <td width= 10%>
-      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-           {{match.scoreAway == -1 ?  "NA" :  match.scoreAway }}
-        </span>
-      </a>
-    </td>
-
-
-    <td>
-      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-          {{match.chanceWinAway | number:0}}
-        </span>
-      </a>
-    </td>
-    <td >
-      <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
-        <span class="badge"><br>
-            {{match.teamAway}}
-        </span>
-      </a>
-    </td>
+  <thead>
+  <tr>
+    <th>J</th>
+    <th>Equipe 1</th>
+    <th>% winrate 1</th>
+    <th>Score 1</th>
+    <th>Score 2</th>
+    <th>% winrate 2</th>
+    <th>Equipe 2</th>
   </tr>
+  </thead>
+    <tr>
+      <td>
+        <a *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.day}} </span>
+        </a>
+      </td>
+      <td>
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.teamHome}}</span>
+        </a>
+      </td>
+      <td >
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.chanceWinHome | number:0}} </span>
+        </a>
+      </td>
+      <td width= 10%>
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.scoreHome == -1 ?  "NA" :  match.scoreHome }} </span>
+        </a>
+      </td>
+      <td width= 10%>
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.scoreAway == -1 ?  "NA" :  match.scoreAway }}</span>
+        </a>
+      </td>
+      <td>
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.chanceWinAway | number:0}} </span>
+        </a>
+      </td>
+      <td >
+        <a  *ngFor="let match of matchs" [class.selected]="match === selectedMatch" (click)="onSelect(match)">
+          <span class="badge"> <br> {{match.teamAway}} </span>
+        </a>
+      </td>
+    </tr>
     </tbody>
-</table></div>
-
+  </table>
+</div>
 <br>
 <br>
-
-<div class="datagrid" id="datagridInfos"><table>
-  <thead colspan="4"><tr colspan="4"><th colspan="4">Statistique (victoire, défaite, nul)</th></tr></thead>
-  <tr ><td>0% - 45%</td><td>45% - 50%</td><td>50% - 55%</td><td>55% - 100%</td></tr>
-  <tr class="alt"><td>Défaite</td><td>Défaite / Nul</td><td>Nul / Victoire</td><td>Victoire</td></tr>
-</table></div>
+<!-- Tableau informations -->
+<div class="datagrid" id="datagridInfos">
+  <table>
+    <thead colspan="4">
+    <tr colspan="4">
+      <th colspan="4">Statistique (victoire, défaite, nul)</th>
+    </tr>
+    </thead>
+    <tr >
+      <td>0% - 45%</td>
+      <td>45% - 50%</td>
+      <td>50% - 55%</td>
+      <td>55% - 100%</td>
+    </tr>
+    <tr class="alt">
+      <td>Défaite</td>
+      <td>Défaite / Nul</td>
+      <td>Nul / Victoire</td>
+      <td>Victoire</td>
+    </tr>
+  </table>
+</div>

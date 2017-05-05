@@ -9,18 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-///<reference path="../../node_modules/@angular/router/src/router.d.ts"/>
 require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var common_1 = require("@angular/common");
 var season_service_1 = require("./season.service");
-// Permet de gérer league'affichage du composant season
+// Manipulate page et component season + initialize link API
 var SeasonsComponent = (function () {
-    function SeasonsComponent(route, router, location, seasonService) {
+    function SeasonsComponent(route, router, seasonService) {
         this.route = route;
         this.router = router;
-        this.location = location;
         this.seasonService = seasonService;
         this.nameLeague = '';
         this.url = '';
@@ -28,18 +25,16 @@ var SeasonsComponent = (function () {
     }
     SeasonsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //Récupération des paramétres d'affichage
+        // Recuperation des parameters d'affichage
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
+        // Initialisation des parameters pour route
         this.seasonService.setSeasonUrl(this.nameLeague);
-        this.seasonService.getSeasons()
-            .then(function (seasons) { return _this.seasons = seasons; });
+        this.seasonService.getSeasons().then(function (seasons) { return _this.seasons = seasons; });
     };
+    // Action select season
     SeasonsComponent.prototype.onSelect = function (season) {
         this.selectedSeason = season;
         this.router.navigate(['/home/leagues/seasons', { l: this.nameLeague, s: this.selectedSeason.name }]);
-    };
-    SeasonsComponent.prototype.goBack = function () {
-        this.location.back();
     };
     return SeasonsComponent;
 }());
@@ -51,7 +46,6 @@ SeasonsComponent = __decorate([
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
         router_1.Router,
-        common_1.Location,
         season_service_1.SeasonService])
 ], SeasonsComponent);
 exports.SeasonsComponent = SeasonsComponent;

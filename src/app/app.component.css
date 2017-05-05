@@ -2,7 +2,6 @@ body{
   margin: 0; /* pour éviter les marges */
   text-align: center; /* pour corriger le bug de centrage IE */
 }
-
 #page{
   width: 90%;
   margin-left: 74px;
@@ -11,7 +10,6 @@ body{
   margin-top: 30px;
   height: 1000px;
 }
-
 ul {
   list-style-type: none;
   margin-top: 0px;
@@ -26,13 +24,11 @@ ul {
   width: 100%;
   z-index:1;
 }
-
 li {
   float: left;
   text-align: center;
   font-family: 'Raleway',sans-serif;
 }
-
 li a {
   display: block;
   color: white;
@@ -42,23 +38,19 @@ li a {
   font-family: 'Raleway',sans-serif;
   text-transform: uppercase;
 }
-
 li a:hover:not(.active) {
   background-color: #111;
 }
-
 .active {
   background-color: #4CAF50;
   border-radius: 10px;
 }
-
 div {
   margin-top: 30px;
   border-radius: 10px;
   height: 1000px;
   border-radius: 10px;
 }
-
 h3 {
   padding-top: 10px;
   padding-bottom: 10px;

@@ -1,14 +1,11 @@
-<!-- Affichage HTML de la page leauge -->
+<!-- HTML de la page league -->
 <h3>Sélectionner la fédération</h3>
-
-<!-- Déroulement et affichages des ligues de la claslague" -->
+<!-- Déroulement et affichages des logos league" -->
 <div id="grid">
     <a *ngFor="let league of leagues"
        [class.selected]="league === selectedLeague"
        (click)="onSelect(league)"
        class="col-0-4">
-
         <img [src] ="'../assets/ligues/'+league.name +'.png'"  opacity="0">
-
     </a>
 </div>

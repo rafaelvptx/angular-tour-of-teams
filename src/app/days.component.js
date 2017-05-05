@@ -11,18 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var common_1 = require("@angular/common");
 var day_service_1 = require("./day.service");
 var team_service_1 = require("./team.service");
-// Permet de gérer league'affichage du composant journée
+// Manipulate component/Page day and call API
 var DaysComponent = (function () {
-    function DaysComponent(route, location, router, dayService, teamService) {
+    function DaysComponent(route, router, dayService, teamService) {
         this.route = route;
-        this.location = location;
         this.router = router;
         this.dayService = dayService;
         this.teamService = teamService;
-        this.title = 'Tour of Days';
     }
     DaysComponent.prototype.getDays = function () {
         var _this = this;
@@ -32,34 +29,38 @@ var DaysComponent = (function () {
         var _this = this;
         this.teamService.getTeams().then(function (teams) { return _this.teams = teams; });
     };
+    // Initialisation
     DaysComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //Récupération des paramétres d'affichage
+        // Recuperation des parameters d'affichage
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
         this.route.params.subscribe(function (p) { return _this.selectedSeason = p['s']; });
+        // Initialisation des variables pour routing suivant
         this.dayService.setDaysUrl(this.nameLeague, this.selectedSeason);
         this.teamService.setTeamsUrl(this.nameLeague, this.selectedSeason);
+        // Recuperation des informations pour affichages
         this.getDays();
         this.getTeams();
     };
+    // Action pour la selection d un day
     DaysComponent.prototype.onSelect = function (day) {
         this.selectedDay = day;
+        // Route
         this.router.navigate(['/home/leagues/seasons/matchs', {
                 l: this.nameLeague,
                 s: this.selectedSeason,
                 d: this.selectedDay.name
             }]);
     };
+    // Action pour la selection d une team
     DaysComponent.prototype.onSelectTeam = function (team) {
         this.selectedTeam = team;
+        // Route
         this.router.navigate(['/home/leagues/seasons/matchsTeam', {
                 l: this.nameLeague,
                 s: this.selectedSeason,
                 t: this.selectedTeam.name
             }]);
-    };
-    DaysComponent.prototype.goBack = function () {
-        this.location.back();
     };
     return DaysComponent;
 }());
@@ -70,7 +71,6 @@ DaysComponent = __decorate([
         styleUrls: ['./days.component.css']
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
-        common_1.Location,
         router_1.Router,
         day_service_1.DayService,
         team_service_1.TeamService])

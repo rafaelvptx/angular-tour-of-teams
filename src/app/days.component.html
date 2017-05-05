@@ -1,21 +1,16 @@
-<!-- Affichage HTML de la page équipe -->
+<!-- Affichage HTML de la page journee -->
 <h3>Séléctionner une équipe/journée</h3>
-
 <div id="grid">
     <a *ngFor="let team of teams"
        [class.selected]="team === selectedTeam"
        (click)="onSelectTeam(team)"
        class="col-0-4">
-
-
         <div class=" ">
+            <!--  Affichage des logos-->
             <img [src] ="'../assets/equipes/'+team.name +'.png'" width = "35px" opacity="0">
-            <!--  <h4>{{team.name}}</h4>"-->
-
          </div>
      </a>
  </div>
- <!-- Affichage HTML de la page journée   [ngStyle]="{ 'background-image': 'url(../assets/equipes/PSG.png)'}"-->
 <div class="trait"></div>
 <!-- Déroulement et affichages des journées de la classe "day" -->
 <div id="grid">

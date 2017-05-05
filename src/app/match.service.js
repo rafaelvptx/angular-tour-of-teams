@@ -12,15 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-// Permet de manipuler league'objet match et d'accèder à league'API
+// Page Match par day et API
 var MatchService = (function () {
     function MatchService(http) {
         this.http = http;
-        this.matchsUrl = 'api/matchs'; // URL to web api
+        this.matchsUrl = 'api/matchs'; // initialisation URL to web api
     }
+    // Initialisation routing match by day
     MatchService.prototype.setMatchsUrl = function (nameLeague, nameSeason, nameDay) {
         this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameDay + '/matchs';
     };
+    // Initialisation routing match by team
     MatchService.prototype.setMatchsUrlForTeam = function (nameLeague, nameSeason, nameTeam) {
         this.matchsUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/' + nameTeam + '/matchsTeam';
     };
@@ -31,15 +33,8 @@ var MatchService = (function () {
             .catch(this.handleError);
     };
     MatchService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred match service', error); // throw error
         return Promise.reject(error.message || error);
-    };
-    MatchService.prototype.getMatch = function (id) {
-        var url = this.matchsUrl + "/" + id;
-        return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
     };
     return MatchService;
 }());

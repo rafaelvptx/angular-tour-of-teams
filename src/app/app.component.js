@@ -16,7 +16,7 @@ AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
         styleUrls: ['./app.component.css'],
-        template: "\n   <ul>\n        <li><a class=\"active\" href=\"\">Home</a></li>\n        <li><a href=\"home/apropos\">A propos</a></li>\n    </ul>\n    <div id=\"page\"><router-outlet></router-outlet></div>"
+        template: "\n   <ul>\n        <li><a class=\"active\" href=\"\">Home</a></li>\n        <li><a href=\"home/apropos\">A propos</a></li>\n    </ul>\n    <div id=\"page\"><router-outlet></router-outlet></div>" // Call other typescript
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

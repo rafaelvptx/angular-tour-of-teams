@@ -13,7 +13,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var league_service_1 = require("./league.service");
 var season_service_1 = require("./season.service");
-// Permet de gérer league'affichage du composant league
+// Object league et API
 var LeaguesComponent = (function () {
     function LeaguesComponent(router, leagueService, seasonService) {
         this.router = router;
@@ -22,6 +22,7 @@ var LeaguesComponent = (function () {
         this.leagues = [];
         this.seasons = [];
     }
+    // Initialisation
     LeaguesComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.leagueService.getLeagues()
@@ -29,8 +30,10 @@ var LeaguesComponent = (function () {
         this.seasonService.getSeasons()
             .then(function (seasons) { return _this.seasons = seasons.slice(0, 5); });
     };
+    // Action selection league
     LeaguesComponent.prototype.onSelect = function (league) {
         this.l = league;
+        // Route
         this.router.navigate(['/home/leagues', { l: this.l.name }]);
     };
     return LeaguesComponent;

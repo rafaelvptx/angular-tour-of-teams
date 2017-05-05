@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
-// Permet de manipuler league'objet day et d'accèder à league'API
+// Manipulate object day
 var DayService = (function () {
     function DayService(http) {
         this.http = http;
@@ -28,7 +28,7 @@ var DayService = (function () {
             .catch(this.handleError);
     };
     DayService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred day service', error); // throw error service
         return Promise.reject(error.message || error);
     };
     DayService.prototype.getDay = function (id) {

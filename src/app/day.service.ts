@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import { Http } from '@angular/http';
 import { Day } from './day';
-
-// Permet de manipuler league'objet day et d'accèder à league'API
-
+import 'rxjs/add/operator/toPromise';
+// Manipulate object day
 @Injectable()
 export class DayService {
-
     private daysUrl = 'api/days';  // URL to web api
-
     constructor(private http: Http) { }
 
     setDaysUrl(nameLeague: String, nameSeason: String) {
-        this.daysUrl = 'http://localhost:8080/'+ nameLeague +'/'+ nameSeason +'/journees';
+        this.daysUrl = 'http://localhost:8080/' + nameLeague + '/' + nameSeason + '/journees';
     }
 
     getDays(): Promise<Day[]> {
@@ -24,7 +20,7 @@ export class DayService {
     }
 
     private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred day service', error); // throw error service
         return Promise.reject(error.message || error);
     }
 

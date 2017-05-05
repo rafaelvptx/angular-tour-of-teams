@@ -4,19 +4,16 @@
   text-align: center;
   margin: auto;
 }
-
 a {
   text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
 }
-
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 h3 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -35,7 +32,6 @@ h3 {
   margin-left:auto;
   margin-right:auto;
 }
-
 .module {
   padding: 10px;
   text-align: center;
@@ -45,18 +41,15 @@ h3 {
   background-color: #333;
   border-radius: 20px;
 }
-
 .module:hover {
   background-color: #EEE;
   cursor: pointer;
   color: #333;
 }
-
 .grid-pad {
   text-align: center;
   margin:auto;
 }
-
 img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */

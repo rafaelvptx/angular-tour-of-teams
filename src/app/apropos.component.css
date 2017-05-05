@@ -4,11 +4,9 @@
   width: 75%;
   margin: auto;
 }
-
 #name{
   text-align: right;
 }
-
 [class*='col-'] {
   float: left;
   padding-right: 20px;
@@ -45,7 +43,6 @@ h3 {
   margin-left:auto;
   margin-right:auto;
 }
-
 h4 {
   position: relative;
   border-radius: 10px;
@@ -71,9 +68,7 @@ h4 {
   color: #333;
 }
 .grid-pad {
-
   padding: 10px 0;
-
 }
 .grid-pad > [class*='col-']:last-of-type {
   padding-right: 20px;
@@ -83,9 +78,6 @@ h4 {
     font-size: 10px;
     max-height: 75px; }
 }
-
-
-
 @media (max-width: 1024px) {
   .grid {
     margin: 0;
@@ -94,7 +86,6 @@ h4 {
     min-width: 60px;
   }
 }
-
 button {
   position:relative;
   margin-top:10%;
@@ -108,9 +99,7 @@ button {
   font-weight:700;
   letter-spacing:5px;
   text-transform:uppercase;
-
 }
-
 button:hover {
   left:4px;
   top:4px;
@@ -123,15 +112,12 @@ button:hover {
   text-align: center;
   margin: auto;
 }
-
 .image {
   width: 100%;
   height: 100%;
   text-align: center;
   margin-left : 5px;
-
 }
-
 .image img {
   -webkit-transition: all 1s ease; /* Safari and Chrome */
   -moz-transition: all 1s ease; /* Firefox */
@@ -141,7 +127,6 @@ button:hover {
   text-align: center;
   margin: auto;
 }
-
 .image:hover img {
   -webkit-transform:scale(2); /* Safari and Chrome */
   -moz-transform:scale(2); /* Firefox */
@@ -151,8 +136,6 @@ button:hover {
   text-align: center;
   margin: auto;
 }
-
-
 .datagrid {
   font: normal 12px/150% Arial, Helvetica, sans-serif;
   background: #fff;
@@ -162,13 +145,11 @@ button:hover {
   margin-left:auto;
   margin-right:auto;
 }
-
 .datagrid table {
   border-collapse: collapse;
   text-align: center;
   width: 100%;
 }
-
 .datagrid table thead th {
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#333333');
   background-color:#333333;
@@ -177,7 +158,6 @@ button:hover {
   font-weight: bold;
   text-align: center;
 }
-
 .datagrid table tbody td {
   color: #333333;
   border-left: 1px solid #D2D2D2;

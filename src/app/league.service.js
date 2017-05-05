@@ -14,32 +14,20 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
-// Permet de manipuler league'objet league et d'accèder à league'API
+// Page league et lien API
 var LeagueService = (function () {
     function LeagueService(http) {
         this.http = http;
         this.leaguesUrl = 'http://localhost:8080/leagues'; // URL to web api
     }
-    /*getLeagues(): Promise<League[]> {
-        return this.http.get(this.leaguesUrl)
-            .toPromise()
-            .then(response => response.json().data as League[])
-            .catch(this.handleError);
-     JSON.parse("{\"ligues\": " + response.text() + "}")
-    }*/
     LeagueService.prototype.getLeagues = function () {
         return this.http.get(this.leaguesUrl)
             .toPromise()
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
-    /* private extractData(res: Response) {
-         let body = res;
-         return body.data || { };
-     }
- */
     LeagueService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred league service', error); // throw error
         return Promise.reject(error.message || error);
     };
     return LeagueService;

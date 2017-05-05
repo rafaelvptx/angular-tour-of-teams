@@ -12,45 +12,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var common_1 = require("@angular/common");
 var match_service_1 = require("./match.service");
-// Permet de gérer league'affichage du composant match en fonction d'une equipe
+// Manipulate page match by team et initialize API
 var MatchsTeamComponent = (function () {
-    function MatchsTeamComponent(matchService, route, location) {
+    function MatchsTeamComponent(matchService, route) {
         this.matchService = matchService;
         this.route = route;
-        this.location = location;
     }
     MatchsTeamComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //Récupération des paramétres d'affichage
+        // Recuperation des parameters d'affichage
         this.route.params.subscribe(function (p) { return _this.nameLeague = p['l']; });
         this.route.params.subscribe(function (p) { return _this.nameSeason = p['s']; });
         this.route.params.subscribe(function (p) { return _this.selectedTeam = p['t']; });
+        // Initialisation des parameters pour getter et print page
         this.matchService.setMatchsUrlForTeam(this.nameLeague, this.nameSeason, this.selectedTeam);
         this.getMatchs();
-    };
-    MatchsTeamComponent.prototype.goBack = function () {
-        this.location.back();
     };
     MatchsTeamComponent.prototype.getMatchs = function () {
         var _this = this;
         this.matchService.getMatchs().then(function (matchs) { return _this.matchs = matchs; });
     };
-    MatchsTeamComponent.prototype.onSelect = function (match) {
-        this.selectedMatch = match;
-    };
     return MatchsTeamComponent;
 }());
 MatchsTeamComponent = __decorate([
     core_1.Component({
-        selector: 'my-matchs',
         templateUrl: './matchsTeam.component.html',
         styleUrls: ['./matchsTeam.component.css']
     }),
     __metadata("design:paramtypes", [match_service_1.MatchService,
-        router_1.ActivatedRoute,
-        common_1.Location])
+        router_1.ActivatedRoute])
 ], MatchsTeamComponent);
 exports.MatchsTeamComponent = MatchsTeamComponent;
 //# sourceMappingURL=matchsTeam.component.js.map

@@ -10,12 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-// Permet de gérer league'affichage du composant league
+// Manipulate component and static page "a propos"
 var AproposComponent = (function () {
     function AproposComponent() {
     }
-    AproposComponent.prototype.ngOnInit = function () {
-    };
+    AproposComponent.prototype.ngOnInit = function () { };
     return AproposComponent;
 }());
 AproposComponent = __decorate([

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//Objet day utilisé pour les seasons et les ligues
+// Object day
 var Day = (function () {
     function Day() {
     }

@@ -1,24 +1,12 @@
 import { Component, OnInit }        from '@angular/core';
-import { Router }                   from '@angular/router';
 
-
-// Permet de gérer league'affichage du composant league
+// Manipulate component and static page "a propos"
 @Component({
   selector: 'my-apropos',
   templateUrl: './apropos.component.html',
   styleUrls: [ './apropos.component.css']
 })
-
 export class AproposComponent implements OnInit {
-
-
-  constructor(
-   ) { }
-
-  ngOnInit(): void {
-
-  }
-
-
-
+  constructor() { }
+  ngOnInit(): void { }
 }

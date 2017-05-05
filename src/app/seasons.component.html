@@ -1,14 +1,10 @@
 <!-- Affichage HTML de la page saison -->
 <h3>Sélectionner la saison</h3>
-
 <!-- Déroulement et affichages des saisons de la classe "seasons" -->
 <div id="grid">
-    <a *ngFor="let season of seasons"
-       [class.selected]="season === selectedSeason"
-       (click)="onSelect(season)"
-       class="col-0-4">
-
-      <button >{{season.name}}</button>
-
+    <a *ngFor="let season of seasons" [class.selected]="season === selectedSeason" (click)="onSelect(season)" class="col-0-4">
+        <button >
+            {{season.name}}
+        </button>
     </a>
 </div>

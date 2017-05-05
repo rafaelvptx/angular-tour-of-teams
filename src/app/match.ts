@@ -1,4 +1,4 @@
-// utilisé par l'objet day
+// Object Match
 export class Match {
     day:                number;
     teamHome:           string;

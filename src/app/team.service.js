@@ -26,16 +26,10 @@ var TeamService = (function () {
             .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    // throw error
     TeamService.prototype.handleError = function (error) {
-        console.error('An error occurred', error); // for demo purposes only
+        console.error('An error occurred team service', error); // throw error
         return Promise.reject(error.message || error);
-    };
-    TeamService.prototype.getTeam = function (id) {
-        var url = this.teamsUrl + "/" + id;
-        return this.http.get(url)
-            .toPromise()
-            .then(function (response) { return response.json().data; })
-            .catch(this.handleError);
     };
     return TeamService;
 }());
